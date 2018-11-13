@@ -1,8 +1,8 @@
 <template>
 <!-- <v-card class="menu-card"> -->
   <div class="tabbar-wrapper">
-    <v-bottom-nav :value="true" :active.sync="active" color="dark" class="tb-menu" app fixed>
-        <v-btn flat v-for="(item,index) in menus" :key="index" :value="index" @click="redirect(index,item.name)"> 
+    <v-bottom-nav :value="true" :active.sync="active" color="white" class="tb-menu" app fixed>
+        <v-btn flat v-for="(item,index) in menus" :key="index" :value="index" @click="redirect(index,item.name)">
           <span>{{$t(item.title)}}</span>
           <v-icon>{{item.icon}}</v-icon>
           <div  v-if="index!==active && index===3 && unReadCount !==0 "  class="unread-wrapper"></div>
@@ -25,18 +25,18 @@ export default {
           path: "/assets",
           icon: "account_balance_wallet"
         },
-        {
-          title: "Menu.TradeCenter",
-          name: "TradeCenter",
-          path: "/trade",
-          icon: "trending_up"
-        },
-        {
-          title: "Title.ThirdApp",
-          name: "Apps",
-          path: "/apps/all",
-          icon: "apps"
-        },
+        // {
+        //   title: "Menu.TradeCenter",
+        //   name: "TradeCenter",
+        //   path: "/trade",
+        //   icon: "trending_up"
+        // },
+        // {
+        //   title: "Title.ThirdApp",
+        //   name: "Apps",
+        //   path: "/apps/all",
+        //   icon: "apps"
+        // },
         // {
         //   title: "Menu.Funding",
         //   name: "Funding",
@@ -53,7 +53,7 @@ export default {
       active: -1
     };
   },
-  
+
   watch: {
     '$route'(to,from){
       let names = this.menus.map(item=> item.name)
@@ -61,7 +61,7 @@ export default {
       if(i >= 0){
         this.active = i
       }
-    }    
+    }
   },
   beforeMount() {
     let name = this.$route.name;
@@ -98,12 +98,13 @@ export default {
     z-index: 99;
 .tb-menu
   background: $secondarycolor.gray
-  box-shadow: 0px -2px 2px $primarycolor.gray
+  //box-shadow: 0px -2px 2px $primarycolor.gray
+  //box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.25)
   bottom: constant(safe-area-inset-bottom)!important
   bottom: env(safe-area-inset-bottom)!important
   &.bottom-nav.bottom-nav--active.dark
     .btn.btn--flat.btn--active
-      color: $primarycolor.green
+      color: $primarycolor.blue
 
 .bottom-nav .btn
   opacity inherit!important
@@ -114,7 +115,7 @@ export default {
   width: 10px
   height: 10px
   border-radius: 5px
-  background: $primarycolor.red 
+  background: $primarycolor.red
   right: 20px
   top:5px
   position: absolute

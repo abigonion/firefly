@@ -203,7 +203,7 @@ export default {
       // update home_domain and inflation_destination from horizon.
       console.log("updateFederationAndInflationInfo")
       console.log(this.accountData)
-      if (this.account.inflationAddress !== this.accountDetails.inflation_destination 
+      if (this.account.inflationAddress !== this.accountDetails.inflation_destination
         || this.account.federationAddress !== this.accountDetails.home_domain) {
         let data = defaultsDeep({}, this.account, {
           federationAddress: this.accountDetails.home_domain,
@@ -262,7 +262,7 @@ export default {
     display: block
     padding: 30px 10px
     width: 100%
-    background: $primarycolor.gray
+    background: #4b82f9
     .menu-row
       float: left
       color: $primarycolor.font
@@ -307,8 +307,7 @@ export default {
     .menu-row-3.active
       background: $secondarycolor.gray
  .showaccounts
-    background: $secondarycolor.gray
-    background: #29292b
+    background: $secondarycolor.gray //修改侧栏颜色
     margin-top: -5px
     padding: 20px 20px
     color: $primarycolor.font

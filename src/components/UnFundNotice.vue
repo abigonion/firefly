@@ -5,7 +5,7 @@
     <div class="unfund-dlg pa-2 pb-4">
       <div class="flex-row pt-2">
         <div class="flex1 textright ud-title" @click="toAutoFundHelp">
-          <i class="material-icons close-icon">help_outline</i> 
+          <i class="material-icons close-icon">help_outline</i>
         </div>
         <div class="flex6 textcenter">{{$t('unfund')}}</div>
         <div class="flex1 textright ud-title" @click="close">
@@ -15,11 +15,12 @@
       <div class="flex-row ud-btns">
         <div class="flex1 textcenter" @click="askForFund">{{$t('fund_askfor')}}</div>
         <!-- <div class="flex1 textcenter" @click="freeFund">{{$t('fund_free')}}</div> -->
-        <div class="flex1 textcenter" @click="freeFund" v-if="fund_config && fund_config.active">
-          <v-progress-circular indeterminate :width="3" :size="16" color="primary" v-if="working"></v-progress-circular>
-          <span v-else>{{$t('fund_free')}}</span>
-        </div>
-        <div class="flex1 textcenter" @click="toKYC" v-else>{{$t('kyc_active')}}</div>
+        <!--<div class="flex1 textcenter" @click="freeFund" v-if="fund_config && fund_config.active">-->
+          <!--<v-progress-circular indeterminate :width="3" :size="16" color="primary" v-if="working"></v-progress-circular>-->
+          <!--<span v-else>{{$t('fund_free')}}</span>-->
+        <!--</div>-->
+        <!--<div class="flex1 textcenter" @click="toKYC" v-else>{{$t('kyc_active')}}</div>-->
+        <!--注释免费激活选项-->
       </div>
     </div>
   </div>
@@ -34,7 +35,7 @@ import { mapState, mapActions } from 'vuex'
 
 export default {
   data(){
-    return {  
+    return {
       working: false,
     }
   },
@@ -53,7 +54,7 @@ export default {
        // alert('--------load fun config--' + JSON.stringify(data))
       }).catch(err=>{
         console.error(err);
-       // alert('----error--' + err.message)  
+       // alert('----error--' + err.message)
       })
     }
   },
@@ -110,7 +111,7 @@ export default {
           }
           this.$toasted.error(this.$t('FederationName.NetworkError')+':'+ message)
         })
-     
+
     },
     toKYC(){
       this.$router.push({name: 'KYC'})

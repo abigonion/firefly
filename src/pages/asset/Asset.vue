@@ -1,18 +1,18 @@
 // 资产详情
 <template>
   <div class="page">
-    <toolbar :title="$t(title)" 
-      :showmenuicon="showmenuicon" 
+    <toolbar :title="$t(title)"
+      :showmenuicon="showmenuicon"
       :showbackicon="showbackicon"
       @goback="back"
-      :shadow=false  
+      :shadow=false
       ref="toolbar"
       >
       <span slot="switch_password">{{$t('Account.Password')}}</span>
     </toolbar>
 
     <swiper :options="swiperOptionTop" class="gallery-top assets-wrapper" ref="swiperTop">
-      <swiper-slide 
+      <swiper-slide class="fontwhite"
         v-for="(item,index) in this.balances"
         v-bind:item="item"
         v-bind:index="index"
@@ -27,7 +27,7 @@
 
     <div class="content asset_content">
       <swiper :options="swiperOptionContent" class="gallery-content" ref="swiperContent">
-        <swiper-slide 
+        <swiper-slide
           v-for="(item,index) in this.balances"
           v-bind:item="item"
           v-bind:index="index"
@@ -39,7 +39,7 @@
                 <v-flex xs2 class="label asset_label">{{$t('Total')}}</v-flex>
                 <v-flex class="amount asset_amount">{{item.balance > 0 ? item.balance.toFixed(7):0}}</v-flex>
             </v-flex>
-            <v-flex d-flex justify-center align-center xs12 class="row" v-if="isNative(item)"> 
+            <v-flex d-flex justify-center align-center xs12 class="row" v-if="isNative(item)">
                 <v-flex xs2 class="label asset_label">{{$t('Available')}}</v-flex>
                 <v-flex class="available asset_available">{{(item.balance - reserve).toFixed(5)}}</v-flex  >
                 <v-spacer></v-spacer>
@@ -51,14 +51,14 @@
 
             </v-flex>
           </v-layout>
-          <!-- 
+          <!--
             <v-flex d-flex xs12 class="row btns">
                 <v-spacer></v-spacer>
                 <v-btn   class="primary btn" @click.stop="receive">{{$t('Receive')}}</v-btn>
                 <v-spacer></v-spacer>
                 <v-btn   class="error btn" @click.stop="send">{{$t('Send')}}</v-btn>
                 <v-spacer></v-spacer>
-              </v-flex> 
+              </v-flex>
               -->
         </swiper-slide>
       </swiper>
@@ -96,7 +96,7 @@
           <v-spacer></v-spacer>
         </v-flex>
     </v-layout>
-    
+
   </div>
 </template>
 
@@ -185,7 +185,7 @@ export default {
         return ele
       })
     },
-  
+
   },
   updated(){
     this.$nextTick(()=>{
@@ -205,7 +205,7 @@ export default {
     this.swiperTop.on('slideChange', this.swipeAsset)
     this.swiperTop.slideTo(this.swiperIndex,0,true)
     //如果历史记录为空,则查询历史记录
-    
+
   },
   methods: {
     ...mapActions({
@@ -250,7 +250,7 @@ export default {
     },
     //跳转到资产简介
     toAssetKnowledge(item){
-        
+
         this.$router.push({
           name:'AssetKnowledge',
           params:{
@@ -260,7 +260,7 @@ export default {
             }
             })
     },
-   
+
   },
   components: {
     Card,
@@ -268,7 +268,7 @@ export default {
     swiper,
     swiperSlide,
     Loading
-    
+
   }
 
 

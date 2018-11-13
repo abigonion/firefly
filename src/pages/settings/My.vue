@@ -26,18 +26,18 @@
                         </div>
                     </div>
                     <div class="flex4">
-                        <div class="title">{{account.name}}</div>
+                        <div class="title fontwhite">{{account.name}}</div>
                         <div class="address">{{account.address | shortaddress}}</div>
                     </div>
                 </div>
                 <div class="flex-row line32 margin-t-10">
                     <div class="flex1 textcenter" @click="toOffer">
-                        <i class="material-icons vcenter">&#xE85D;</i>
-                        <span>{{ $t('History.Offer') }}</span>
+                        <i class="material-icons vcenter fontwhite">&#xE85D;</i>
+                        <span class="fontwhite">{{ $t('History.Offer') }}</span>
                     </div>
                     <div class="flex1 textcenter" @click="toHistory">
-                        <i class="material-icons  vcenter">&#xE889;</i>
-                        <span>{{$t('History.Title')}}</span>
+                        <i class="material-icons  vcenter fontwhite">&#xE889;</i>
+                        <span class="fontwhite">{{$t('History.Title')}}</span>
                     </div>
                 </div>
             </div>
@@ -46,9 +46,9 @@
             <div slot="card-content">
                 <ul class="settings-ul">
                     <li class="settings-li" @click="redirect(item.name)" v-for="item in menus" :key="item.name">
-                        <i class="material-icons vcenter">{{item.icon}}</i>
+                        <i class="material-icons vcenter iconblue">{{item.icon}}</i>
                         <span>{{$t(item.title)}}</span>
-                        <i class="material-icons vcenter f-right mt-2">keyboard_arrow_right</i>
+                        <i class="material-icons vcenter f-right mt-2 arrowgray">keyboard_arrow_right</i>
                         <div class="circular" v-if="item.name=='MessageCenter'&&unReadCount>0"> {{unReadCount}}</div>
                     </li>
                 </ul>
@@ -69,7 +69,7 @@ export default {
     data(){
         return {
             showaccountsview: false,
-            menus: [               
+            menus: [
                 {
                     title: "ManageAccount",
                     name: "ManageAccount",
@@ -85,41 +85,41 @@ export default {
                     name: "MyAddress",
                     icon: "bookmark"
                 },
-                {
-                    title: 'kyc',
-                    name: 'KYC',
-                    icon: "security"
-                },
-                 {
-                    title: "Menu.Funding",
-                    name: "Funding",
-                    icon: "import_export"
-                },
+                // {
+                //     title: 'kyc',
+                //     name: 'KYC',
+                //     icon: "security"
+                // },
+                //  {
+                //     title: "Menu.Funding",
+                //     name: "Funding",
+                //     icon: "import_export"
+                // },
                 {
                     title: "Menu.Settings",
                     name: "Settings",
                     icon: "settings"
-                },
+                }
                 // {
                 //     title: "Title.ThirdApp",
                 //     name: "Apps",
                 //     icon: "apps"
                 // },
-                {
-                    title: "Menu.Help",
-                    name: "Help",
-                    icon: "help"
-                },
-                {
-                title: "Menu.MessageCenter",
-                name: "MessageCenter",
-                icon: "message"
-              },   
-               {
-                title: "tickets",
-                name: "Tickets",
-                icon: "assignment"
-              }
+                // {
+                //     title: "Menu.Help",
+                //     name: "Help",
+                //     icon: "help"
+                // }
+              //   {
+              //   title: "Menu.MessageCenter",
+              //   name: "MessageCenter",
+              //   icon: "message"
+              // },
+              //  {
+              //   title: "tickets",
+              //   name: "Tickets",
+              //   icon: "assignment"
+              // }
             ],
             myofferpage:{ name: 'History', params: { active: 'offer' } },
             historypage:{ name: 'History', params: { active: 'transaction' } }

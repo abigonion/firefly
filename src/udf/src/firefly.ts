@@ -1,4 +1,4 @@
-//萤火钱包数据返回
+//彩虹钱包数据返回
 import { RequestParams } from './helpers';
 
 export const URL_PREFIX = 'firefly_trade_mock'

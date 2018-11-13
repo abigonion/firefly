@@ -1,14 +1,14 @@
 <template>
   <div class="page">
-    <toolbar :title="$t(title)" 
-      :showmenuicon="showmenuicon" 
+    <toolbar :title="$t(title)"
+      :showmenuicon="showmenuicon"
       :showbackicon="showbackicon"
       @goback="back"
       ref="toolbar"
       />
 
     <div class="content">
-      
+
       <card :class="[{ Info_mycard: isB, Info_mycardB:isC }]" padding="20px 10px 20px 10px">
 
         <div class="card-content" slot="card-content">
@@ -21,14 +21,14 @@
               {{showaccount.name}}
           </div>
 
-          
+
           <div class="label">{{$t('Account.AccountAddress')}}</div>
           <div class="value" @click="copy(showaccount.address)">{{showaccount.address}}</div> <!-- 账户地址-->
 
           <div class="label" v-if="showaccount.federationAddress">{{$t('FederationAddress')}}</div>
           <div class="value" v-if="showaccount.federationAddress" @click="copy(showaccount.federationAddress)">{{showaccount.federationAddress}}&nbsp;</div><!-- 联邦地址-->
-         
-          
+
+
           <div class="label" v-if="showaccount.inflationAddress">{{$t('InflationAddress')}}</div>
           <div class="value" v-if="showaccount.inflationAddress" @click="copy(showaccount.inflationAddress)">
             {{inflationPoolSite}}
@@ -42,7 +42,7 @@
               <v-icon class="secreticons" v-else>visibility_off</v-icon>
             </div>
           </div>
-         
+
           <div class="label" v-if="showaccount.federationAddress">{{$t('FederationAddress')}}</div>
           <div class="value" v-if="showaccount.federationAddress" @click="copy(showaccount.federationAddress)">{{showaccount.federationAddress}}&nbsp;</div>
           <div class="label" v-if="showaccount.inflationAddress">{{$t('InflationAddress')}}</div>
@@ -56,9 +56,9 @@
         </div>
 
       </card>
-      
-      
-      <div :class="'footer' + (canModify ? ' active':' unactive') ">
+
+
+      <div :class="'footer1' + (canModify ? ' active':' unactive') ">
         <v-tabs class="tabs-bg-dark" grow centered hide-slider color="primary">
           <v-tab class="tab2" @click.stop="modify">{{$t('Modify')}}</v-tab>
           <v-tab class="tab2" @click.stop="resetpwd">{{$t('ResetPassword')}}</v-tab>
@@ -198,7 +198,7 @@
       </div>
 
       <!--密码输入界面，在查看密钥之前
-      <password-sheet 
+      <password-sheet
         :accountname=""
         :address=""
         @cancel="cancelCheckPWD"
@@ -331,10 +331,10 @@ export default {
         }
       }
       console.log(this.accounts)
-    
-      
+
+
   },
-  mounted(){ 
+  mounted(){
   },
   methods: {
     ...mapActions({
@@ -376,7 +376,7 @@ export default {
         this.inpassword2 = null;
         this.inpassword3 = null;
 
-        
+
       }
     },
     del(){
@@ -488,7 +488,7 @@ export default {
           console.log(error)
           this.$toasted.error(this.$t('Account.PasswordResetFail'));
         })
-      
+
     },
     canclePwdInput(){
       this.showPwdSheet = false
@@ -511,7 +511,7 @@ export default {
               }else if(this.action === ACTION_VIEW_MNEMONIC){
                 this.showMnemonicDlg()
               }
-              
+
             }else{
               this.$toasted.error(this.$t('Error.PasswordWrong'))
             }
@@ -532,7 +532,7 @@ export default {
     //           this.showPwdSheet = false
     //           this.showseed = false
     //           this.showViewkeySheet = true
-              
+
     //         }else{
     //           this.$toasted.error(this.$t('Error.PasswordWrong'))
     //         }
@@ -552,7 +552,7 @@ export default {
       }else{
         this.showPwdSheet = true
       }
-      
+
     },
 
     cancleResetPwdInput(){
@@ -609,7 +609,7 @@ export default {
           color: $primarycolor.green
   .qrcode
     text-align: center
-.footer
+.footer1
   background: $primarycolor.gray
   height:40px
   line-height:40px
@@ -622,7 +622,7 @@ export default {
   bottom: calc(8px + env(safe-area-inset-bottom))
   left: 0
   right: 0
-  
+
   &.active
     color:$primarycolor.green
   &.unactive
@@ -695,7 +695,7 @@ export default {
 
 
 .Info_mycard
-  background-color:$secondarycolor.gray  
+  background-color:$secondarycolor.gray
   height:550px
 .Info_mycardB
   background-color:$secondarycolor.black

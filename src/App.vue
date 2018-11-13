@@ -27,7 +27,7 @@
         </div>
       </div>
     </v-dialog>
-   
+
 
 
   </v-app>
@@ -86,7 +86,7 @@ export default {
     showTabbar(value){
       // console.log('-------------2:'+value)
       this.tabBarShow = value
-    }    
+    }
   },
   computed: {
     ...mapState({
@@ -171,7 +171,7 @@ export default {
             if (this.address) {
               //this.getAccountInfo(this.address)
               //closeStreams();
-              
+
               // initStreams(this.address);
               this.getAllAssetHosts();
             }
@@ -239,7 +239,7 @@ export default {
     //每小时执行一次
     this.messagesInterval = setInterval(()=>{
       this.getMessages()
-    }, 3600000)    
+    }, 3600000)
   },
   destroyed() {
       clearInterval(this.messagesInterval)
@@ -420,24 +420,34 @@ export default {
   font-size: 16px
 
 .upDlg
-  z-index: 999  
-
+  z-index: 999
+  //ld新加的CSS
+.iconblue
+  color: #0084FF
+.arrowgray
+  color: #E6E6E6
+.fontwhite
+  color: #ffffff
+.fontgray
+  color: #999999
+.fontblack
+  font-color: #333333
 @css {
   html{
     background: none;
     background-color: transparent;
   }
   .white-input:not(.input-group--focused)> .input-group__input{
-    border-bottom: 1px solid #FFF;
+    border-bottom: 1px solid #E6E6E6;
   }
   .application--light .input-group:not(.input-group--error) label{
-    color:#FFF;
+    color:#999999;
   }
   .application--light .input-group:not(.input-group--error) label:after{
     color:#f35530;
   }
   .app.application.theme--dark{
-    background: #212122;
+    background: #ffffff;
   }
   .app.application.theme--dark.bg-hide{
     background: none;
@@ -447,7 +457,7 @@ export default {
     font-family:  "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   }
   .application--light .input-group:not(.input-group--error):not(.input-group--focused):not(.input-group--disabled) .input-group__input .input-group__append-icon{
-    color:#FFF;
+    color:#E6E6E6;
   }
   .application--light .input-group input{
     color:#FFF;

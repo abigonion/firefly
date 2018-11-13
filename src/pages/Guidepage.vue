@@ -1,36 +1,36 @@
 <template>
   <div class="page">
-    
+
     <div class="content">
 
         <swiper :options="swiperOption" ref="mySwiper" class="">
-            
+
             <swiper-slide class="guidepage_swiper_slide infocard">
                         <div class="guidepage_swiper_title">{{$t("TransactionPassword")}}</div>
                         <div class="guidepage_swiper_content">{{$t("TransactionPassword_MsgOne")}}</div>
                         <div class="guidepage_swiper_content">{{$t("TransactionPassword_MsgTwo")}}</div>
                         <div class="guidepage_swiper_content">{{$t("TransactionPassword_MsgThree")}}</div>
-                        <img :src='require("../assets/img/step1.svg")' class="guidepage_swiper_img">
+                        <img :src='require("../assets/img/step1.png")' class="guidepage_swiper_img">
             </swiper-slide>
             <swiper-slide class="guidepage_swiper_slide infocard">
                 <div class="guidepage_swiper_title">{{$t("Account_secretkey")}}</div>
                 <div class="guidepage_swiper_content">{{$t("Account_secretkey_MsgOne")}}</div>
                 <div class="guidepage_swiper_content">{{$t("Account_secretkey_MsgTwo")}}</div>
                 <div class="guidepage_swiper_content">{{$t("Account_secretkey_MsgThree")}}</div>
-                <img :src='require("../assets/img/step2.svg")' class="guidepage_swiper_img">
+                <img :src='require("../assets/img/step2.png")' class="guidepage_swiper_img">
             </swiper-slide>
             <swiper-slide class="guidepage_swiper_slide infocard">
                 <div class="guidepage_swiper_title">{{$t("TDO")}}</div>
                 <div class="guidepage_swiper_content">{{$t("TDO_MsgOne")}}</div>
                 <div class="guidepage_swiper_content">{{$t("TDO_MsgTwo")}}</div>
                 <div class="guidepage_swiper_content">{{$t("TDO_MsgThree")}}</div>
-                <img :src='require("../assets/img/step3.svg")' class="guidepage_swiper_img">
+                <img :src='require("../assets/img/step3.png")' class="guidepage_swiper_img">
             </swiper-slide>
             <div class="swiper-pagination"  slot="pagination"></div>
             <!-- <div class="swiper-button-prev" slot="button-prev"></div> -->
             <!-- <div class="swiper-button-next" slot="button-next"></div> -->
            </swiper>
-    
+
         <div class="bottom-nav flex-row">
            <div class="flex1 bg-p" @click="slideprv">{{$t("LastStep")}}</div>
            <!-- <v-flex xs6 class="guidepage_bottombutton" v-if="get_progresscount!=1" @click="slidenext" >{{$t("NextStep")}}</v-flex>
@@ -38,9 +38,9 @@
            <div class="flex1  bg-p" v-if="progress_count < 1" @click="slidenext" >{{$t("NextStep")}}</div>
            <div class="flex1 bg-p"  v-else @click="toWallet" >{{$t("AllRight")}}</div>
        </div>
-    
+
     </div>
-       
+
   </div>
 </template>
 
@@ -52,7 +52,7 @@ import Vue from 'vue'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 // require styles
 import 'swiper/dist/css/swiper.css'
- 
+
 
 export default {
 
@@ -96,8 +96,8 @@ export default {
                 // debugger: true,
                 // swiper callbacks
                 // swiper的各种回调函数也可以出现在这个对象中，和swiper官方一样
-               
-                
+
+
                 // more Swiper configs and callbacks...
                 // ...
                 }
@@ -109,7 +109,7 @@ export default {
                 this.$router.push({name: 'Picklanguage'})
             },
         toWallet(){
-     
+
                 this.$router.push({name:'Wallet'})
         },
         slideprv(){
@@ -150,14 +150,14 @@ export default {
         //     // return this.$refs.mySwiper.swiper.progress
         //     return false
         // },
-      
+
     },
     computed : {
         swiper() {
             console.log('--------s--')
         return this.$refs.mySwiper.swiper
       }
-    } ,   
+    } ,
     watch : {
         input_value : function(newValue,oldValue){
             if(newValue==10){
@@ -168,7 +168,7 @@ export default {
         progress : function(newValue,oldValue){
             this.retprogress_count()
         }
-        
+
     },
     mounted() {
       // current swiper instance
@@ -201,7 +201,7 @@ export default {
   padding-top: 0
   padding-top: calc(4px + constant(safe-area-inset-top))
   padding-top: calc(4px + env(safe-area-inset-top))
-  
+
 .content
     height: 100%
 .guidepage_swiper
@@ -216,12 +216,12 @@ export default {
     background:$secondarycolor.gray
 
 .guidepage_swiper_img
-    padding-top:20% 
+    padding-top:20%
     padding-left:20px
-    padding-right:20px    
+    padding-right:20px
     width:300px
     height: 220px
-    
+
 
 .guidepage_swiper_title
     color:$primarycolor.green

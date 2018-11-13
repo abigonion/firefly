@@ -1,10 +1,10 @@
 /**
- * 
+ *
  */
 <template>
   <div class="page">
-    <toolbar :title="$t(title)" 
-      :showmenuicon="showmenuicon" 
+    <toolbar :title="$t(title)"
+      :showmenuicon="showmenuicon"
       :showbackicon="showbackicon"
       @goback="back"
       ref="toolbar"
@@ -35,7 +35,7 @@
               </div>
             </card>
             <div style="flex: 1;"></div>
-            <v-footer class="contactdetails_vfooter">        
+            <v-footer class="contactdetails_vfooter">
               <!-- <v-layout row  wrap> -->
                   <v-flex xs4>
                     <v-btn class='moddel' block flat dark :to="{name: 'ModifyContact', params:{id:contact.id}}" >
@@ -49,9 +49,9 @@
                   </v-flex>
               <!-- </v-layout>   -->
             </v-footer>
-        </div> 
+        </div>
       </div>
-   
+
   </div>
 </template>
 
@@ -155,7 +155,7 @@ export default {
     .contactdetails_card {
       background-color: $secondarycolor.gray;
       border-radius: 5px;
-     
+
     }
 
     .mycard {
@@ -206,8 +206,8 @@ export default {
   padding: 8px 8px
 
 .send {
-  background-color: #21ce90 !important;
-  
+  background-color: #0084FF !important;
+
 }
 
 .moddel {
@@ -216,12 +216,12 @@ export default {
 
 .contactdetails_sendposition
   margin-right:0px
-  
-  
+
+
 .contactdetails_memolabelposition
   margin-top:-5px
   height:20px
-  
+
 
 .contactdetails_addresslabel
   padding-left:5px
@@ -237,22 +237,22 @@ export default {
   padding-left:5px
   margin-top:5px
 .contactdetails_momolabelvalue
-  padding-left:5px  
-  
-  
-  
+  padding-left:5px
+
+
+
 
 .contactdetails_contactname
   position:relative
   padding-left:13px
-  padding-top:20px 
+  padding-top:20px
   color:$primarycolor.green
 .contactdetails_contactnamevalue
   position:absolute
   margin-left:12px
   margin-top:5px
-  
-  
+
+
 .contactdetails_stellaraddressbarcode
   text-align:center
   color:$primarycolor.green

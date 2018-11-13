@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 <template>
   <div class="page">
@@ -15,7 +15,7 @@
             {{$t('Error.NoContactYet')}}
           </div>
           <div class='contacts' v-else>
-            <v-text-field append-icon="search" v-model="search" dark 
+            <v-text-field append-icon="search" v-model="search" dark
                           class="search"  hide-details single-line >
             </v-text-field>
             <div class="contracts-list">
@@ -76,7 +76,7 @@ export default {
       account: state => state.accounts.selectedAccount,
       accountData: state => state.accounts.accountData,
       allcontacts: state => state.app.contacts,
-          
+
     }),
     filteredContacts() {
       return this.allcontacts.filter(contact => {
@@ -160,8 +160,8 @@ export default {
     padding 15px 15px 15px 15px
     background-color:$secondarycolor.gray
     border-radius:5px
-    
-   
+
+
   .contacts-row
     overflow: hidden
     position: relative
@@ -191,7 +191,7 @@ export default {
           white-space: nowrap
         .avatar
           font-size: 1.2em
-          color: #21ce90
+          color: #0084FF
         .contact-address
           font-weight: lighter;
         .myassets
@@ -205,14 +205,14 @@ export default {
             font-size: 20px
             padding-right: 10px
         .myassets-reserve
-          text-align: right  
+          text-align: right
           color: $secondarycolor.font
           .balance
             padding-right: 10px
 
 .assets-row:last-child
   border-bottom: 0px
-.operate-box 
+.operate-box
   position: absolute
   z-index: 1
   height: 100%

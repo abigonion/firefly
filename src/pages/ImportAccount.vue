@@ -15,14 +15,14 @@
       </div>
     </toolbar>
 
-    <q-r-scan 
-      @finish="qrfinish" 
-      @close="qrclose" 
-      :validator="qrvalidator" 
+    <q-r-scan
+      @finish="qrfinish"
+      @close="qrclose"
+      :validator="qrvalidator"
       v-if="showScanner"></q-r-scan>
 
     <div class="content" v-if="!showScanner">
-      <div class="tabs pt-1 pb-1">
+      <div class="tabs pt-1 pb-1 pt-1 pb-1">
         <span :class="'tab ma-1 pa-1 ' + ( importFlag===0 ? 'active':'' )" @click="changeImportFlag(0)">{{$t('importByMnemonic')}}</span>
         <span :class="'tab ma-1 pa-1 ' + ( importFlag===1 ? 'active':'' )" @click="changeImportFlag(1)">{{$t('importBySeed')}}</span>
       </div>
@@ -60,7 +60,7 @@
         <v-flex xs6 @click="nextStep">
           <span :class="nextStepClass">{{$t('NextStep')}}</span>
         </v-flex>
-       </v-layout>  
+       </v-layout>
     </div>
 </div>
 </template>
@@ -70,7 +70,7 @@ import Toolbar from '@/components/Toolbar'
 import QRScan from '@/components/QRScan'
 import SecretKeyInput from '@/components/SecretKeyInput'
 import {importAccount,isValidSeed,fromMnemonic, validateMnemonic} from '@/api/account'
-import { getMnemonicFromData } from '@/api/qr' 
+import { getMnemonicFromData } from '@/api/qr'
 import { mapState, mapActions} from 'vuex'
 import { EN, ZH_CN,ZH_HK } from '@/locales/index'
 import { isEnglishMnemonic, isChineseMnemonic } from '../api/account';
@@ -218,7 +218,7 @@ export default {
         this.setNewSeed({seed})
         this.$router.push({name: 'CreateAccount'})
       }
- 
+
     },
     setSeedToInput(){
       this.$refs.secretkeyRef.inputText(this.scanSeed)
@@ -276,16 +276,16 @@ export default {
   left: 0
   right: 0
   z-index: 99
-  background: $secondarycolor.gray
+  background: $primarycolor.blue
   height: 42px
   line-height: 42px
   font-size: 16px
   text-align: center
-  color: $primarycolor.green
+  color: $primarycolor.gray
 .btn-available
-  color: $primarycolor.green
+  color: $primarycolor.gray
 .btn-unavailable
-  color: $secondarycolor.green
+  color: $secondarycolor.gray
 .hidebackground
   background:none
   background-color: transparent

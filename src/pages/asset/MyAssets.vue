@@ -1,10 +1,11 @@
 /**
- * 
+ *
  */
 <template>
   <div class="page">
-    <toolbar :title="$t(title)" 
-      :showmenuicon="showmenuicon" 
+  <div class="accountandtotalasset">
+    <toolbar :title="$t(title)"
+      :showmenuicon="showmenuicon"
       :showbackicon="showbackicon"
       ref="toolbar"
       >
@@ -22,7 +23,7 @@
     </toolbar>
     <accounts-nav :show="showaccountsview" @close="closeView"/>
      <!--=======================================================-->
-<div class="accountandtotalasset">
+
   <scroll :refresh="reload">
     <div class="accountnameaddress"><!-- 试着改动的地方wdp-->
       <div class="flex-row">
@@ -32,18 +33,18 @@
             </div>
         </div>
         <div class="flex4">
-            <div class="title">{{account.name}}</div>
+            <div class="title fontwhite">{{account.name}}</div>
             <div class="address">{{account.address | shortaddress}}</div>
         </div>
       </div>
     </div>
     <div id="TotalSum" class="myassets_totalSum" >
       <span class="myassets_TotalSumWord" >{{$t('TotalAssets')}}≈</span>
-      <span>{{TotalSum.toFixed(7)}}</span><!-- 要改成资产数组数据的累加的和-->
-      <span>XCN</span>
+      <span class="fontwhite">{{TotalSum.toFixed(7)}}</span><!-- 要改成资产数组数据的累加的和-->
+      <span class="fontwhite">XCN</span>
     </div>
   </scroll>
-</div>
+  </div>
 
     <div class="flex-row">
       <div class="flex2">&nbsp;</div>
@@ -62,16 +63,16 @@
               <v-list-tile-title @click="chgSortItem(item)">{{ $t(item.label) }}</v-list-tile-title>
             </v-list-tile>
           </v-list>
-        </v-menu> 
+        </v-menu>
       </div>
     </div>
 
     <scroll :refresh="refresh">
-   
-   <div class="content assets-xcontent"> 
+
+   <div class="content assets-xcontent">
       <card padding="0px 0px" margin="0px 0px" class="myassets_infocard_thirdassets full-width">
         <div class="assets full-width" slot="card-content">
-          <div class="assets-row" v-for="(item,index) in assets" :key="item.issuer+item.code" 
+          <div class="assets-row" v-for="(item,index) in assets" :key="item.issuer+item.code"
               v-touch="{
                 left: () => selectedItem = index,
                 right: () => selectedItem = null
@@ -93,10 +94,10 @@
             </v-flex>
             <v-flex xs7 class="myassets-wrapper">
               <div class="myassets-balance third">
-                 <span class="balance">{{item.balanceStr}}</span>
-                 <span class="label">{{$t('Total')}}</span> 
+                 <span class="balance iconblue">{{item.balanceStr}}</span>
+                 <span class="label fontgray">{{$t('Total')}}</span>
                  <br/>
-                  <span v-if="item.total >=0">≈{{item.total > 0 ? item.total : 0}}&nbsp;XCN</span>
+                  <span v-if="item.total >=0" class="fontgray">≈{{item.total > 0 ? item.total : 0}}&nbsp;XCN</span>
               </div>
             </v-flex>
           </v-layout>
@@ -111,42 +112,42 @@
     </div>
   </scroll>
 
-<!--   
+<!--
   <tab-bar />
    -->
 
 
-    <v-dialog v-model="showUpdateHintDlg" max-width="95%" persistent class="upDlg">
-      <div>
-        <div class="a-card-content">
-          <div class="avatar-div textcenter">
-            <v-avatar>
-              <img src="../../assets/img/logo-red.png" />
-            </v-avatar>
-          </div>
-          <div class="uhint" v-html="$t('update_2_native_hint')" @click="toUpdate">
-            
-          </div>
-          <div class="u-btns flex-row">
-            <div class="flex1 u-red textcenter" @click="toUpdate">{{$t('Button.OK')}}</div>
-            <div class="flex1 u-red textcenter" @click="showUpdateHintDlg=false">{{$t('Button.Cancel')}}</div>
-          </div>
-        </div>
-      </div>
-    </v-dialog>
+    <!--<v-dialog v-model="showUpdateHintDlg" max-width="95%" persistent class="upDlg">-->
+      <!--<div>-->
+        <!--<div class="a-card-content">-->
+          <!--<div class="avatar-div textcenter">-->
+            <!--<v-avatar>-->
+              <!--<img src="../../assets/img/logo-red.png" />-->
+            <!--</v-avatar>-->
+          <!--</div>-->
+          <!--<div class="uhint" v-html="$t('update_2_native_hint')" @click="toUpdate">-->
 
-  
+          <!--</div>-->
+          <!--<div class="u-btns flex-row">-->
+            <!--<div class="flex1 u-red textcenter" @click="toUpdate">{{$t('Button.OK')}}</div>-->
+            <!--<div class="flex1 u-red textcenter" @click="showUpdateHintDlg=false">{{$t('Button.Cancel')}}</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</v-dialog>-->
+    <!--注释更新提示-->
+
    <bottom-notice :show.sync="notice" :text="noticeText"></bottom-notice>
 
   <!-- <bottom-notice :show.sync="accountNotFundDlg" @update:show="closeAccountNotFoundDlg">
     <div slot>
       <div @click="toHelp">{{$t('Error.AccountNotFund')}}<v-icon color="primary">help</v-icon></div>
       <div @click="toKYC"><span class="underline">{{$t('kyc_active')}}</span></div>
-      
+
     </div>
   </bottom-notice> --><!--v-if="accountNotFundDlg"-->
   <un-fund-notice  v-if="accountNotFundDlg" @close="closeAccountNotFoundDlg">></un-fund-notice>
-  
+
 
    <loading :show="working" :loading="working" :success="delok" :fail='delerror' />
    <password-sheet v-if="needpwd" @cancel="cancelpwd" @ok="checkpwd" />
@@ -189,11 +190,11 @@ export default {
       title: 'Title.MyAssets',
       showbackicon: false,
       showmenuicon: true,
-      noticeText: '',  
+      noticeText: '',
       notice: false,
 
       showaccountsview: false,
-      showUpdateHintDlg: true,
+      // showUpdateHintDlg: true, 注释更新提示
 
       working:false,
       delok: false,
@@ -273,7 +274,7 @@ export default {
           }
         });
       //按照名称排序或者是按照资产排序,默认直接返回。
-        if (this.sort_flag != SORT_DEFAULT) {        
+        if (this.sort_flag != SORT_DEFAULT) {
           data = data.sort((item1, item2) => {
             if (this.sort_flag === SORT_NAME) {
               return item1.code > item2.code ? 1 : -1;
@@ -284,11 +285,11 @@ export default {
         }
       //添加价格
       data.forEach(item=>{
-        
+
         if(item.balance > 0){
           let key = item.code
           if(!isNativeAsset(item)) {
-            key += '-' + item.issuer    
+            key += '-' + item.issuer
           }
           let p = this.prices[key]
           if(p){
@@ -299,7 +300,7 @@ export default {
         }else{
           item.total = 0
         }
-      }) 
+      })
       return data.map(item=> {
           item.balanceStr = item.balance > 0 ? item.origin_balance: 0
           return item
@@ -334,7 +335,7 @@ export default {
      },60000)
 
     this.$nextTick(() => {
-      
+
       // TODO 优化
       // setTimeout(() => {
       //   if (this.notfunding) {
@@ -463,7 +464,7 @@ export default {
     },
     chgSortItem(item){
       this.selectedSortItem = item;
-      this.sort_flag = item.key; 
+      this.sort_flag = item.key;
     },
     toThirdApps(){
       this.$router.push({name: 'Apps'})
@@ -485,10 +486,10 @@ export default {
     closeView(){
         this.showaccountsview = false
     },
-    toUpdate(){
-      window.open('https://wallet.fchain.io', "_system");
-    }
-   
+    // toUpdate(){
+    //   window.open('https://wallet.fchain.io', "_system");
+    // }  注释更新提示
+
   },
   components: {
     Toolbar,

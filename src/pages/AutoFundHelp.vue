@@ -1,8 +1,8 @@
 //激活帮助说明
 <template>
   <div>
-     <toolbar :title="$t('fund_free_title')" 
-          :showmenuicon="false" 
+     <toolbar :title="$t('fund_free_title')"
+          :showmenuicon="false"
           :showbackicon="true"
           ref="toolbar"
         >
@@ -11,9 +11,9 @@
       <div class="help pa-1 pt-4" >
         <h2 class="help-t pt-1 pl-2">一、为什么账号需要激活</h2>
         <p class="help-c pl-2">
-          萤火是基于恒星网络（stellar）的去中心化钱包。<br/>
+          彩虹是基于恒星网络（stellar）的去中心化钱包。<br/>
           Stellar的特性：账号（G地址）创建后并不能立即使用，需要进行账号激活。<br/>
-          激活的唯一方式：老账号向新账号转账至少1XLM才能使用。这1XLM将被冻结在恒星网络中。<br/>
+          激活的唯一方式：老账号向新账号转账至少20XLM才能使用。这1XLM将被冻结在恒星网络中。<br/>
         </p>
         <h2 class="help-t pt-1 pl-2">二、什么是XLM</h2>
         <p class="help-c pl-2">
@@ -37,7 +37,7 @@
           &nbsp;&nbsp;d.操作：消耗0.00001XLM/次。操作行为包括：转账、授信、吃单、撤单等，凡是需要记录到Stellar网络且被Stellar网络认可的行为都需要消耗0.00001XML<br/>
           4.如果您首次创建账号并进行最简单的交易，激活账号（冻结1XLM）+授信A资产（冻结0.5XLM）+授信B资产（冻结0.5XLM）+挂单（冻结0.5XLM）+交易（消耗0.00001XLM）=2.50001XLM。即首次的交易需要最小余额为2.50001XLM；<br/>
           5.如果第二次进行相同的动作，因为账号已经激活，资产已经添加，则需要最小余额0.50001XLM；<br/>
-          6.综上所述，每次交易您的成本仅为0.00001XLM，是不是很便宜呀。看不懂，没关系，您只要知道：在萤火钱包交易成本很低，可以忽略不计。<br/>
+          6.综上所述，每次交易您的成本仅为0.00001XLM，是不是很便宜呀。看不懂，没关系，您只要知道：在彩虹钱包交易成本很低，可以忽略不计。<br/>
         </p>
 
         <h2 class="help-t pt-1 pl-2">五、友情提示</h2>
@@ -50,7 +50,7 @@
           1.TG群：<span @click="toHref('https://t.me/fchain_io')">https://t.me/fchain_io</span><br/>
           2.网址：<span @click="toHref('https://fchain.io/')">https://fchain.io/</span><br/>
         </p>
-        
+
 
 
       </div>
@@ -88,7 +88,7 @@ export default {
     Card,
   }
 
-  
+
 }
 </script>
 

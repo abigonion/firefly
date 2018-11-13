@@ -10,7 +10,7 @@
     <div class="logo">
       <img src="../assets/img/logo-blank.png" alt="firefly" class="logo-img"/>
     </div>
-    <div class="footer">
+    <div class="fontwhite footer">
        <v-layout row wrap>
         <v-flex xs6 @click="importAccount">
           <span>{{$t('ImportAccount')}}</span>
@@ -18,9 +18,9 @@
         <v-flex xs6  @click="createAccount">
           <span>{{$t('CreateAccount')}}</span>
         </v-flex>
-       </v-layout>  
-    </div>  
-  </div>  
+       </v-layout>
+    </div>
+  </div>
 </template>
 <script>
 import { mapState,mapActions} from 'vuex'
@@ -56,13 +56,15 @@ export default {
 </script>
 <style lang="stylus" scoped>
 @require '../stylus/color.styl'
+.white--text
+  color: #333333 !important;
 .back-icon
   font-size: 32px
 .create-account-page.page
   .footer
-    background: $primarycolor.green!important
+    background: $primarycolor.blue!important
 .create-account-page
-  background: $primarycolor.green
+  background: $primarycolor.blue
   color: $primarycolor.font
   padding-top: 40%
   height: 100vh
@@ -91,13 +93,14 @@ export default {
     left: 0
     right: 0
     z-index: 99
-    // background: $secondarycolor.green
+    background: $secondarycolor.blue
     font-size: 16px
     text-align: center
     padding-top: 8px
     padding-bottom: 8px
     padding-bottom: constant(safe-area-inset-bottom)
     padding-bottom: env(safe-area-inset-bottom)
+    color:#fff
 
 
 </style>

@@ -8,16 +8,7 @@
       <card padding="10px 10px" class="mycard">
         <div class="card-content" slot="card-content">
           <ul class="settings-ul">
-            
-            <li class="settings-li">
-              <span>{{$t('redUpGreenDown') }}</span>
-              <v-switch class="pincodeswitch f-right"
-                  v-model="colorSwitch"
-                  color="primary"
-                  hide-details
-                  @change="switchColor"
-                  ></v-switch>
-            </li>
+
 
             <li class="settings-li">
               <span>{{$t('PinCode')}}</span>
@@ -33,16 +24,16 @@
               <span>{{$t('Language')}}</span>
               <i class="material-icons vcenter f-right s-right">keyboard_arrow_right</i>
             </li>
-            <li class="settings-li" @click="toChangeHorizon">
-              <span>{{$t('PublicNetUrl')}}</span>
-              <i class="material-icons vcenter f-right s-right">keyboard_arrow_right</i>
-            </li>
-            <li class="settings-li" @click="toFederationService">
-              <span>{{$t('FederationName')}}</span>
-              <i class="material-icons vcenter f-right s-right">keyboard_arrow_right</i>
-            </li>
+            <!--<li class="settings-li" @click="toChangeHorizon">-->
+              <!--<span>{{$t('PublicNetUrl')}}</span>-->
+              <!--<i class="material-icons vcenter f-right s-right">keyboard_arrow_right</i>-->
+            <!--</li>-->
+            <!--<li class="settings-li" @click="toFederationService">-->
+              <!--<span>{{$t('FederationName')}}</span>-->
+              <!--<i class="material-icons vcenter f-right s-right">keyboard_arrow_right</i>-->
+            <!--</li>-->
             <li class="settings-li" @click="toAbout">
-              <span>{{$t('About.Title')}}</span> 
+              <span>{{$t('About.Title')}}</span>
               <i class="material-icons vcenter f-right s-right">keyboard_arrow_right</i>
             </li>
           </ul>
@@ -151,8 +142,9 @@ export default {
           padding-left: 10px
           .settings-li
             font-size: 16px
-            padding-top: 5px
-            padding-bottom: 5px
+            padding-top: 15px
+            padding-bottom: 15px
+            border-bottom:1px solid #E6E6E6
             .pincodeswitch
               float: right
               width: 50px

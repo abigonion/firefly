@@ -6,7 +6,7 @@
     <toolbar :title="$t(title)"
       :showmenuicon="showmenuicon"
       :showbackicon="showbackicon"
-      color="error"
+      color="blue"
       @goback="back"
       >
        <div class="right" slot="right-tool" v-if="!showContacts">
@@ -130,7 +130,7 @@
        </div>
 
       </card>
-      
+
     <div style="flex: 1;"></div>
      <div class="btn-group" v-if="!showContacts">
         <!-- <v-btn class="error btn-send" @click.stop="send">{{$t('Send')}}</v-btn> -->
@@ -143,7 +143,7 @@
     <contact-book v-show="showContacts" :data="contactsdata" :close="()=>{showContacts=false}" :ok="selectContact"/>
 
     <contact-book v-show="showmemobook" :data="memobookdata" :close="()=>{showmemobook=false}" :ok="selectmemo"/>
-      
+
       <div v-if="is_sendconfim" class="sendconfim_bottom_sheet">
         <v-bottom-sheet  v-model="is_sendconfim" dark>
             <v-container class="v_container">
@@ -322,7 +322,7 @@ export default {
   },
   created(){
     if(StatusBar){
-      StatusBar.backgroundColorByHexString("#f35833");
+      StatusBar.backgroundColorByHexString("#0084FF");
       this.$store.commit('CHANGE_IOSSTATUSBAR_COLOR', 'error');
     }
   },
@@ -491,10 +491,10 @@ export default {
         this.$toasted.error(this.$t('Error.UnValidatedAddress'))
         return
       }
-     
-      if(this.exchanges && this.exchanges[dest] 
-        && !this.memoswitch 
-        && (this.memotype === null || typeof this.memotype === 'undefined' 
+
+      if(this.exchanges && this.exchanges[dest]
+        && !this.memoswitch
+        && (this.memotype === null || typeof this.memotype === 'undefined'
           ||this.memo === null || typeof this.memo === 'undefined' )
         ){
         this.choosedExchange = this.exchanges[dest].name
@@ -535,7 +535,7 @@ export default {
           }catch(err){
             console.error(err)
           }
-          
+
         })
         .catch(err=>{
           console.log(err)
@@ -625,7 +625,7 @@ export default {
       this.realDestination = null
       this.federationUrlResult = null
       this.is_sendconfim = false
-    
+
     }
   },
   components: {
@@ -733,7 +733,7 @@ export default {
   font-size:18px
   text-align:center
   padding-left:30%
-  
+
 
 .content
   //top: 48px
@@ -829,7 +829,7 @@ export default {
 .memoswitch
   font-size:16px
   align-self center
-  color  #f35833
+  color  #0084FF
 .hidebackground
   background none
 

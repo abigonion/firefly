@@ -1,10 +1,10 @@
 
 // 官方地址
-export const OFFICIAL_HORIZON = 'https://horizon.stellar.org'
+export const OFFICIAL_HORIZON = 'https://sudo38.com'
 
-export const CHINA_HORIZON = 'https://api.chinastellar.com'
+export const CHINA_HORIZON = 'https://sudo38.com'
 //万云
-export const WANCLOUD_HORIZON = 'https://stellar-api.wancloud.io'
+export const WANCLOUD_HORIZON = 'https://sudo38.com'
 
 //自定义horizon
-export const FCHAIN_HORIZON = 'https://horizon.fchain.io'
+export const FCHAIN_HORIZON = 'https://sudo38.com'

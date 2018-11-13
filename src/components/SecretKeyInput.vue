@@ -1,10 +1,10 @@
 /*
  * 密钥输入容器，自动格式化内容
- * @Author: mazhaoyong@gmail.com 
- * @Date: 2018-03-05 17:30:09 
+ * @Author: mazhaoyong@gmail.com
+ * @Date: 2018-03-05 17:30:09
  * @Last Modified by: mazhaoyong@gmail.com
  * @Last Modified time: 2018-08-27 11:12:07
- * @License MIT 
+ * @License MIT
  */
  <template>
    <div  onTouchMove={this.preventTouchMove}>
@@ -25,7 +25,7 @@
       :append-icon="hideKeyboard ? 'keyboard' : 'keyboard_hide'"
       :append-icon-cb="keyboardIconClick"
       ></v-text-field>
-    
+
     <secret-keyboard v-show="!hideKeyboard"
       ref="keyboard"
       :onChange="keyBoardChange"
@@ -35,7 +35,7 @@
    </div>
 
  </template>
- 
+
  <script>
  import  endsWith  from 'lodash/endsWith'
  import util from './SecretKeyInputUtil'
@@ -93,7 +93,7 @@
         value = util.getPrefixStrippedValue(value, this.prefix, this.prefix.length);
         // convert case
         value = this.uppercase ? value.toUpperCase() : value;
-       
+
         // prefix
         if (this.prefix &&  value.length) {
             value = this.prefix + value;
@@ -138,7 +138,7 @@
       console.log('done')
     },
     keyBoardBack(){
-      this.keyBoardChange() 
+      this.keyBoardChange()
     },
 
     focusHandler(event){
@@ -162,7 +162,7 @@
     reset(){
       this.seedInput = ''
     }
-    
+
 
    },
    components: {
@@ -170,8 +170,8 @@
    }
  }
  </script>
- 
+
  <style lang="stylus">
- 
+
  </style>
- 
+

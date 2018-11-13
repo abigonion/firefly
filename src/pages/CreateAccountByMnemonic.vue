@@ -53,7 +53,7 @@
         <v-flex xs6 @click="nextStep">
           <span :class="nextStepClass">{{$t('NextStep')}}</span>
         </v-flex>
-       </v-layout>  
+       </v-layout>
     </div>
   </div>
 </div>
@@ -170,19 +170,19 @@ export default {
   left:0
   right:0
   z-index:99
-  background:$primarycolor.gray
+  background:$primarycolor.blue
   height:42px
   line-height:42px
   font-size:16px
   text-align:center
-  color:$primarycolor.green
+  color:$primarycolor.gray
 .btn-available
   color:$primarycolor.green
 .btn-unavailable
-  color:$secondarycolor.green
+  color:$secondarycolor.gray
 .hint
   color:$primarycolor.green
   font-size: 14px
-  
+
 </style>
 
