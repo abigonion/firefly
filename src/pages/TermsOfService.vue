@@ -80,8 +80,8 @@ export default {
   left: 0
   right: 0
   bottom: 56px
-  bottom: calc(56px + constant(safe-area-inset-bottom))
-  bottom: calc(56px + env(safe-area-inset-bottom))
+  bottom: calc(36px + constant(safe-area-inset-bottom))
+  bottom: calc(36px + env(safe-area-inset-bottom))
   color: $secondarycolor.font
   overflow-y:auto
   font-size: 14px

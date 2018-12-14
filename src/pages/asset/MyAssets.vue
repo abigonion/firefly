@@ -40,8 +40,9 @@
     </div>
     <div id="TotalSum" class="myassets_totalSum" >
       <span class="myassets_TotalSumWord" >{{$t('TotalAssets')}}≈</span>
-      <span class="fontwhite">{{TotalSum.toFixed(7)}}</span><!-- 要改成资产数组数据的累加的和-->
-      <span class="fontwhite">XCN</span>
+      <span class="fontwhite">0</span>
+      <!-- <span class="fontwhite">{{TotalSum.toFixed(7)}}</span>要改成资产数组数据的累加的和,暂时改为0-->
+      <span class="fontwhite">USDT</span>
     </div>
   </scroll>
   </div>
@@ -97,7 +98,7 @@
                  <span class="balance iconblue">{{item.balanceStr}}</span>
                  <span class="label fontgray">{{$t('Total')}}</span>
                  <br/>
-                  <span v-if="item.total >=0" class="fontgray">≈{{item.total > 0 ? item.total : 0}}&nbsp;XCN</span>
+                  <!--<span v-if="item.total >=0" class="fontgray">≈{{item.total > 0 ? item.total : 0}}&nbsp;XCN</span>-->
               </div>
             </v-flex>
           </v-layout>

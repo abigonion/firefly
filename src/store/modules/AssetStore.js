@@ -11,14 +11,14 @@ const state = {
   //eg. https://api.yourdomain.com/deposit?address=GD6WU64OEP5C4LRBH6NK3MHYIA2ADN6K6II6EXPNVUR3ERBXT4AN4ACD&asset=BTC
   assets: {},//当前操作账户的资产的account数据，
 
-  assethosts: {XLM:'stellar.org'} ,//资产的Host_name属性
+  assethosts: {XLM:'rainbow.link'} ,//资产的Host_name属性
 
 }
 
 const getters = {
-  
+
 }
-  
+
 const actions = {
   selectAsset({commit}, asset){
     commit(SELECT_ASSET,asset)
@@ -81,7 +81,7 @@ const actions = {
 
   }
 
-  
+
 }
 
 const mutations = {

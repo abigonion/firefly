@@ -2,7 +2,7 @@ import axios from 'axios'
 import pkg from '../../package'
 import { isNativeAsset } from './assets'
 
-export const APP_NAME = 'firefly'
+export const APP_NAME = 'Rainbow'
 
 export const DEBUG = false // 是否dbug模式
 
@@ -16,7 +16,7 @@ export const OFFICIAL_SITE = 'https://sudo38.com'
 // APP 最新版本信息
 export const CHECK_UPDATE = 'https://raw.githubusercontent.com/StellarCN/firefly/master/package.json'
 //资产说明
-export const ASSET_INFO_BASE_URL = 'https://raw.githubusercontent.com/StellarCN/firefly/docs/assets/'
+export const ASSET_INFO_BASE_URL = 'http://sudo38/docs/assets/'
 
 //default interval : 1分钟
 export const DEFAULT_INTERVAL = 60000
@@ -167,7 +167,7 @@ export const COINS_ICON = {
   ETC: 'icon-ETC',
   LTC: 'icon-LTC',
   XRP: 'icon-XRP',
-  XLM: 'icon-XLM',
+  XLM: 'icon-btc',
   ETH: 'icon-ETH',
   BTC: 'icon-btc',
   XEL: 'icon-xel',
@@ -181,7 +181,7 @@ export const COINS_ICON = {
 
 export const FF_ICON = 'icon-zhanwei'
 
-export const DEFAULT_ICON = 'icon-XLM'
+export const DEFAULT_ICON = 'icon-btc'
 
 export const WORD_ICON = {
   'W':'icon-shouzimuzhanweiW',

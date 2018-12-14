@@ -58,7 +58,7 @@
   "Error.GetAccountInfoError": "獲取賬戶信息錯誤",
   "Error.NoPassword":"請先輸入賬號密碼",
   "Error.UnValidatedAddress":"地址錯誤",
-  "Error.NotEnoughLumens":"XLM不足",
+  "Error.NotEnoughLumens":"RBC不足",
 
   "Account.AccountName":"賬戶名稱",
   "Account.Password":"密碼",
@@ -149,7 +149,7 @@
   "Error.SaveHorizonFail": "保存恆星公網節點地址失敗",
 
   "FederationName": "聯邦賬戶名",
-  "FederationName.Description": "本服務由 fed.network 提供，你可以訪問該網站以了解更多的信息。在這裡你可以註冊一個諸如 name*fed.network 的用戶名，其他用戶可以通過該用戶名給你發送資產。但是需要注意的是本服務只是為了讓用戶便於輸入地址，還請用戶自行核對解析後的地址是否正確。註冊一個地址需要支付 0.5 XLM。取消註冊需要支付 1 XLM。",
+  "FederationName.Description": "本服務由 fed.network 提供，你可以訪問該網站以了解更多的信息。在這裡你可以註冊一個諸如 name*fed.network 的用戶名，其他用戶可以通過該用戶名給你發送資產。但是需要注意的是本服務只是為了讓用戶便於輸入地址，還請用戶自行核對解析後的地址是否正確。註冊一個地址需要支付 0.5 RBC。取消註冊需要支付 1 RBC。",
   "FederationName.Address": "你的地址：",
   "FederationName.Connecting": "正在與服務建立連接...",
   "FederationName.ConnectionFailed": "網絡連接失敗，請稍後再試",
@@ -200,7 +200,7 @@
   "Account.Skip":"跳過",
 
 
-  "Error.NotEnoughAssetToFundAccount":"發送XLM必須大於20才可以激活賬戶",
+  "Error.NotEnoughAssetToFundAccount":"發送RBC必須大於20才可以激活賬戶",
 
   "Error.NotEnoughAsset":"資產不足",
 
@@ -326,7 +326,7 @@
   "Congrats":"To da moon!",
   "CongratsMessage":"祝賀您！保存好信息後，您就可以開始使用螢火錢包了。",
   "Error.AccountNotFund": "您的賬戶尚未激活。請查看幫助信息",
-  "Error.UnFundNeedXLM":"對方賬戶未激活，必須發送XLM進行激活",
+  "Error.UnFundNeedXLM":"對方賬戶未激活，必須發送RBC進行激活",
   "ERROR.SCANNER_CONTENT_VALIDATE":"二維碼內容不正確",
 
   "About.Title":"關於",
@@ -516,11 +516,11 @@
   "auto_fund":"賬戶激活",
   "fund_success":"賬戶已經激活",
   "unfund":"賬戶尚未激活",
-  "fund_hint":"激活需要向該賬戶發送至少20XLM",
+  "fund_hint":"激活需要向該賬戶發送至少20RBC",
   "fund_askfor":"收幣激活",
   "fund_free":"免費激活",
   "fund_free_title":"激活說明",
-  "fund_used_up":"免費激活名額已經用完，您可向朋友收取1XLM完成賬戶激活。",
+  "fund_used_up":"免費激活名額已經用完，您可向朋友收取1RBC完成賬戶激活。",
   "tickets":"工單",
   "autofund_hint":"請稍等，正在進行激活操作！",
   "manageOffer":"操作委單",

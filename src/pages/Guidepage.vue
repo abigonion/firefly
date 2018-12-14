@@ -5,7 +5,7 @@
 
         <swiper :options="swiperOption" ref="mySwiper" class="">
 
-            <swiper-slide class="guidepage_swiper_slide infocard">
+            <swiper-slide class="guidepage_swiper_slide infocard ">
                         <div class="guidepage_swiper_title">{{$t("TransactionPassword")}}</div>
                         <div class="guidepage_swiper_content">{{$t("TransactionPassword_MsgOne")}}</div>
                         <div class="guidepage_swiper_content">{{$t("TransactionPassword_MsgTwo")}}</div>
@@ -198,7 +198,6 @@ export default {
   color: $primarycolor.font
   font-size: 16px
   height: 100vh
-  padding-top: 0
   padding-top: calc(4px + constant(safe-area-inset-top))
   padding-top: calc(4px + env(safe-area-inset-top))
 
@@ -211,7 +210,6 @@ export default {
     padding-top: 1rem
     background:$secondarycolor.gray
     height: 80%
-
 .guidepage_swiper_slide
     background:$secondarycolor.gray
 
