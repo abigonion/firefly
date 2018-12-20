@@ -50,13 +50,13 @@
               <a href="javascript:void(0)" @click.stop="cancelMyOffer(offer,index)">{{$t('Trade.Cancel')}}</a>
             </div>
           </div>
-          
+
         </div>
       </card>
     </div>
   </scroll>
 
-   <loading :show="working" :loading="sending" :success="dealok" :fail='dealfail' 
+   <loading :show="working" :loading="sending" :success="dealok" :fail='dealfail'
       color="red" :title="loadingTitle" :msg="loadingMsg" :closeable="dealfail" @close="hiddenLoadingView"/>
 
 
@@ -79,14 +79,14 @@ import { getXdrResultCode } from '@/api/xdr'
     data() {
       return {
         offers: [],
-      
+
         working: false,
         sending: false,
         dealok: false,
         dealfail: false,
         loadingTitle: null,
         loadingMsg: null,
-      
+
       }
     },
     computed: {
@@ -139,12 +139,12 @@ import { getXdrResultCode } from '@/api/xdr'
       convertOffer(offer){
         let data = {}
         if(offer.buying.asset_type === 'native'){
-          data.to = { code: 'XLM', issuer: 'stellar.org'}  
+          data.to = { code: 'RBC', issuer: 'rainbow.link'}
         }else{
           data.to = {code: offer.buying.asset_code, issuer: offer.buying.asset_issuer }
-        } 
+        }
         if(offer.selling.asset_type === 'native'){
-          data.from = { code: 'XLM', issuer: 'stellar.org'}  
+          data.from = { code: 'RBC', issuer: 'rainbow.link'}
         }else{
           data.from =  {code: offer.selling.asset_code, issuer: offer.selling.asset_issuer }
         }

@@ -4,13 +4,13 @@ import { findAccount } from './storage'
 import { encrypt, decrypt } from './crypt'
 var Promise = require('es6-promise').Promise
 
-// fetch payments 
+// fetch payments
 // return page
 export function fetchPayments(address,order='desc',limit=200){
   return getServer().payments().forAccount(address).order(order).limit(limit).call();
 }
 
-// convert 
+// convert
 export function convertRecords(address,rows){
   var data = [];
   for(var i=0,n=rows.length;i<n;i++){
@@ -23,20 +23,20 @@ export function convertRecords(address,rows){
       case 'path_payment':
         t.isInbound = r.to === address;
         t.counterparty = t.isInbound ? r.from : r.to;
-        t.asset = r.asset_type == "native" ? {code: "XLM"} : {code:r.asset_code, issuer: r.asset_issuer};
+        t.asset = r.asset_type == "native" ? {code: "RBC"} : {code:r.asset_code, issuer: r.asset_issuer};
         t.amount = r.amount;
         break;
       case 'create_account':
         t.isInbound = r.account === address;
         t.counterparty = t.isInbound ? r.source_account : r.account;
-        t.asset = {code: "XLM"};
+        t.asset = {code: "RBC"};
         t.amount = r.starting_balance;
         break;
       default:
-      
+
     }
     data.push(t);
-  } 
+  }
   return data;
 }
 

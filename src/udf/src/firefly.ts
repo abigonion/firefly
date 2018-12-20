@@ -28,14 +28,14 @@ export class FFWAPI {
       this._baseCode = _base[0];
       this._baseIssuer = _base[1];
     }else{
-      this._baseCode = 'XLM';
+      this._baseCode = 'RBC';
     }
     if(counter.indexOf('_') >0){
       let _counter = counter.split('_');
       this._counterCode = _counter[0];
       this._counterIssuer = _counter[1];
     }else{
-      this._counterCode = 'XLM';
+      this._counterCode = 'RBC';
     }
   }
 
@@ -93,7 +93,7 @@ export class FFWAPI {
         minmov2: 0,
         // pointvalue: 1,
         has_intraday: true,
-        "intraday_multipliers": ['1'], 
+        "intraday_multipliers": ['1'],
         supported_resolutions: ["1", "5", "15", "60", "1D", "1W"],
         has_seconds: false,
         has_daily: true,
@@ -112,7 +112,7 @@ export class FFWAPI {
    * https://horizon.stellar.org/trade_aggregations?base_asset_type=native&counter_asset_type=credit_alphanum12&counter_asset_code=XCN&counter_asset_issuer=GCNY5OXYSY4FKHOPT2SPOQZAOEIGXB5LBYW3HVU3OWSTQITS65M5RCNY&start_time=1534150599762&end_time=1534151611026&resolution=60000&order=desc
    */
   public history():Promise<any>{
-    
+
     let _path = new tradeAggregationsParams(this._baseCode, this._baseIssuer, this._counterCode, this._counterIssuer, this._params);
     console.log('--------------------------read history:'+this._horizonServer+'trade_aggregations?'+ _path.params)
     return fetch(this._horizonServer+'trade_aggregations?'+ _path.params)
@@ -120,7 +120,7 @@ export class FFWAPI {
   	.then((responseTest: string) => {
       let result = JSON.parse(responseTest)
       let records = result._embedded.records
-      
+
       if(records.length === 0){
         return {s: 'no_data', t:[], o:[], h:[],l:[],c:[],v:[], v2:[]}
       }
@@ -147,7 +147,7 @@ export class FFWAPI {
 
 const ASSET_TYPE_4 = 'credit_alphanum4';
 const ASSET_TYPE_12 = 'credit_alphanum12';
-//segment duration as millis since epoch. 
+//segment duration as millis since epoch.
 //Supported values are 1 minute (60000), 5 minutes (300000), 15 minutes (900000), 1 hour (3600000), 1 day (86400000) and 1 week (604800000).
 const RESOLUTIONS:{[key:string]:number} = {
   "1": 60000,//1minutes
@@ -197,7 +197,7 @@ class tradeAggregationsParams {
   }
 
   private isNativeAsset(code:string,issuer:string|undefined): boolean{
-    if(code === 'XLM' && issuer === undefined){
+    if(code === 'RBC' && issuer === undefined){
       return true;
     }
     return false;

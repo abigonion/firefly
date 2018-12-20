@@ -4,14 +4,14 @@ import { isNativeAsset } from './assets'
 
 export const APP_NAME = 'Rainbow'
 
-export const DEBUG = false // 是否dbug模式
+export const DEBUG = true // 是否dbug模式
 
 //app版本号
 export const APP_VERSION = pkg.version
 
 export const APP_GITHUB = pkg.github
 
-export const OFFICIAL_SITE = 'https://sudo38.com'
+export const OFFICIAL_SITE = 'www.rainbow.link'
 
 // APP 最新版本信息
 export const CHECK_UPDATE = 'https://raw.githubusercontent.com/StellarCN/firefly/master/package.json'
@@ -46,8 +46,8 @@ export const TRADE_PAIRS = [  {
 
 export const ASSETS_ISSUER_HOST = {
   'XLM': {
-    code: 'XLM',
-    host: 'stellar.org'
+    code: 'RBC',
+    host: 'rainbow.link'
   },
   'GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX': {
     code: 'CNY',

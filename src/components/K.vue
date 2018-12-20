@@ -1,10 +1,10 @@
 /**
  * K线图
- * @Author: mazhaoyong@gmail.com 
- * @Date: 2018-01-25 11:53:34 
+ * @Author: mazhaoyong@gmail.com
+ * @Date: 2018-01-25 11:53:34
  * @Last Modified by: mazhaoyong@gmail.com
  * @Last Modified time: 2018-08-01 15:30:24
- * @License: MIT 
+ * @License: MIT
  */
 <template>
 <card class="k-card" padding="5px 0px">
@@ -40,13 +40,13 @@
                 <i class="material-icons k-icon" v-if="showKgraph" @click="switchKgraphShow">trending_up</i>
                 <i class="material-icons  k-icon" v-else @click="switchKgraphShow">visibility_off</i>
           </div>
-         
+
       </div>
-       
+
       <v-btn class="btn-fullscreen" v-if="showKgraph && !fullscreen"  icon @click="toFullscreen">
           <i class="material-icons">fullscreen</i>
       </v-btn>
-      
+
       <div v-show="showKgraph" class="kgraph" :id="id" v-bind:style="{height: height}"></div>
       <!-- <div class="flex-row textcenter chgresolution"  v-show="showKgraph">
           <div :class="'flex1 ' + (resolution_key === 'week' ? 'active' : '')" @click="chgResolution('week')">{{$t('week')}}</div>
@@ -71,8 +71,8 @@
 //var echarts = require('echarts')
 import echarts from '@/libs/pkgs/initEcharts'
 import NP from 'number-precision'
-import { getTradeAggregation, getTradeAggregation1min, 
-    getTradeAggregation15min, getTradeAggregation1hour, 
+import { getTradeAggregation, getTradeAggregation1min,
+    getTradeAggregation15min, getTradeAggregation1hour,
     getTradeAggregation1day, getTradeAggregation1week,
     RESOLUTION_1MIN, RESOLUTION_15MIN, RESOLUTION_1HOUR, RESOLUTION_1DAY, RESOLUTION_1WEEK } from '@/api/tradeAggregation'
 import { getAsset,isNativeAsset } from '@/api/assets'
@@ -107,7 +107,7 @@ export default {
             ele: null,//echarts对象
             opt: null,
             colors: ['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
-            
+
             resolution_key: 'hour',
             resolution: RESOLUTION_1HOUR,
             resolutionIndex: "2",
@@ -125,14 +125,14 @@ export default {
                 "15min": 60,//5天
                 "1min": 60
             },
-            
-            
+
+
             //24小时的成交记录
             lastTradeAggregation: null,
             //最新的成交价格统计
             lastTrade:null,
             tradeInterval: null,//查询最新一次交易数据的interval
-            
+
             showKgraph: true,
         }
     },
@@ -192,8 +192,8 @@ export default {
         return this.redUpGreenDown ? '#ef232a' : '#14b143'
       },
       titleData(){
-        let idf = isNativeAsset(this.base) ? 'XLM' : this.base.code+'-'+this.base.issuer
-        let idt = isNativeAsset(this.counter) ? 'XLM' : this.counter.code +'-'+this.counter.issuer
+        let idf = isNativeAsset(this.base) ? 'RBC' : this.base.code+'-'+this.base.issuer
+        let idt = isNativeAsset(this.counter) ? 'RBC' : this.counter.code +'-'+this.counter.issuer
         let key = idf + '_' + idt;
         let d = this.tradePairsStat[key]
         if(d){
@@ -205,7 +205,7 @@ export default {
             return this.genTitleDataEx(d)
         }
         return {}
-      }  
+      }
     },
     beforeMount () {
         //生成随机的id
@@ -214,7 +214,7 @@ export default {
         if(this.fullscreen){
             screen.orientation.lock('landscape');
         }
-        
+
     },
     beforeDestroy () {
         console.log('---------before destory --------')
@@ -227,7 +227,7 @@ export default {
             screen.orientation.lock('portrait');
         }
         this.deleteTradeInterval()
-        
+
     },
     mounted () {
         console.log('----before mounted------')
@@ -238,7 +238,7 @@ export default {
                 this.tinterval = setInterval(this.fetch, this.resolution)
                 this.reload();
             }, this.timeout)
-           
+
         })
     },
     methods: {
@@ -278,7 +278,7 @@ export default {
               end_time = new Date().getTime()
           }else{//初次请求，判断start是否存在
             if(this.start < 0){
-                
+
                 start_time = this.getStartTime()
             }else{
                 start_time = this.start;
@@ -289,7 +289,7 @@ export default {
                 end_time = this.end
             }
           }
-          getTradeAggregation(getAsset(this.base), getAsset(this.counter), 
+          getTradeAggregation(getAsset(this.base), getAsset(this.counter),
             start_time, end_time, this.resolution, 200, 'desc')
             .then(data => {
                 this.lasttime = end_time
@@ -300,7 +300,7 @@ export default {
                     this.data = []
                 }
                 records = records.reverse()
-                records.forEach(item=>{                   
+                records.forEach(item=>{
                     this.dates.push(new Date(item.timestamp).Format('MM-dd hh:mm'))
                     this.volumes.push(new Decimal(item.base_volume).add(item.counter_volume).toNumber())
                     this.subVolumes.push([Number(item.base_volume),Number(item.counter_volume)])
@@ -313,7 +313,7 @@ export default {
                 this.opt.series[1].data = this.volumes
                 this.opt.series[2].data = this.calculateMA(5)
                 this.opt.series[3].data = this.calculateMA(10)
-                
+
                 this.ele.setOption(this.opt, true)
                 // console.log(this.opt)
             })
@@ -358,16 +358,16 @@ export default {
                             + `${closelabel}: ${series[0].data[2]}<br/>`
                             + `${highlabel}: ${series[0].data[3]}<br/>`
                             + `${lowlabel}: ${series[0].data[4]}<br/>`
-                            
+
                         }
-                        result += 
+                        result +=
                              `MA5: ${series[2].data}<br/>`
                             + `MA10: ${series[3].data}<br/>`
                             + `${volumelabel}: ${series[1].data}<br/>`
                         return result
                     }
                 },
-                axisPointer: { 
+                axisPointer: {
                     link: [{xAxisIndex: [0,1]}]
                 },
                 dataZoom: [{

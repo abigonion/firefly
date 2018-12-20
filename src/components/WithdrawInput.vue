@@ -3,7 +3,7 @@
  */
 <template>
 <div class="withdraw_wrapper">
-  <loading :show="onsend" :loading="sending" :success="sendsuccess" :fail='sendfail' 
+  <loading :show="onsend" :loading="sending" :success="sendsuccess" :fail='sendfail'
     :title="loadingTitle" :msg="loadingMsg" :closeable="sendfail" @close="hiddenLoadingView"
     />
   <div class="withdraw_form" v-if="!senddata">
@@ -20,7 +20,7 @@
         <div class="hint">{{field.hint}}</div>
         <v-select
             v-bind:items="field.options"
-            :name="field.name"      
+            :name="field.name"
             class="field_select"
             item-value="value"
             item-text="label"
@@ -55,7 +55,7 @@
             </div>
 
       </div>
-      
+
     </div>
 
     <div class="amount-wrapper"v-if="showAmount">
@@ -68,7 +68,7 @@
             dark
             type="number"
           ></v-text-field>
-      <!-- <v-slider v-model="num" 
+      <!-- <v-slider v-model="num"
                 class="amount-slider"
                 color="red"
                 dark
@@ -84,9 +84,9 @@
   <!--要发送的数据-->
   <div class="senddata_wrapper" v-else>
     <div class="senddata_amount">
-      
+
       <span class="amount">{{sendasset.amount}}</span>
-      <span class="code">{{sendasset.code}}</span> 
+      <span class="code">{{sendasset.code}}</span>
 
     </div>
     <div class="senddata_btn">
@@ -95,7 +95,7 @@
   </div>
 
   <contact-book v-show="showbook" :data="bookdata" :close="()=>{showbook=false}" :ok="afterBookChose"/>
-     
+
 
 </div>
 </template>
@@ -123,7 +123,7 @@ export default {
       sendfail: false,//发送失败
       loadingTitle: null,
       loadingMsg: null,
-      
+
       showbook: false,
       bookkey: null,
       bookdata: ['myaddress']
@@ -306,7 +306,7 @@ export default {
           },1000)
 
         })
-      
+
     },
 
     hideLoading(){
@@ -318,7 +318,7 @@ export default {
     showbookView(name){
       this.bookkey = name
       this.showbook = true
-      
+
     },
     afterBookChose(type,data){
       this.showbook = false
@@ -334,12 +334,12 @@ export default {
     }
 
   },
-  
+
   components:{
     Loading,
     ContactBook,
   }
-  
+
 
 
 }

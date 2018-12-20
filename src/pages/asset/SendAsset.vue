@@ -383,12 +383,12 @@ export default {
         text = text.trim()
         let data = JSON.parse(text)
         if (data.stellar) {
-          if (data.stellar.payment) {
-            let payment = data.stellar.payment
+          if (data.rainbow.payment) {
+            let payment = data.rainbow.payment
             if (payment.asset) {
               this.selectedasset = payment.asset
             } else {
-              this.selectedasset = {code: 'XLM'}
+              this.selectedasset = {code: 'RBC'}
             }
             //根据当前资产选择
             if(this.selectedasset.code){

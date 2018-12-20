@@ -5,8 +5,8 @@ import axios from 'axios'
 
 /**
  * 验证是否为官方XLM资产（stronghold发行了XLM资产，存在重名）
- * @param {String | Object} _code 
- * @param {String} _issuer 
+ * @param {String | Object} _code
+ * @param {String} _issuer
  */
 export function isNativeAsset(_code,_issuer){
   let code=null,issuer=null;
@@ -17,8 +17,8 @@ export function isNativeAsset(_code,_issuer){
     code = _code
     issuer = _issuer
   }
-  if(code!='XLM')return false
-  if(issuer && issuer!='stellar.org')return false
+  if(code!='RBC')return false
+  if(issuer && issuer!='rainbow.link')return false
   return true
 }
 
@@ -47,11 +47,11 @@ export function assetHost(issuer){
 
 export function assetKey(base,counter){
   let result = `${base.code}`
-  if(base.issuer && 'stellar.org'!== base.issuer){
+  if(base.issuer && 'rainbow.link'!== base.issuer){
     result += '-' + base.issuer
   }
   result += '_' + counter.code
-  if(counter.issuer && 'stellar.org'!== counter.issuer){
+  if(counter.issuer && 'rainbow.link'!== counter.issuer){
     result += '-' + counter.issuer
   }
   return result;

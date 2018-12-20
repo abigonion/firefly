@@ -58,7 +58,7 @@
   "Error.GetAccountInfoError": "获取账户信息错误",
   "Error.NoPassword":"请先输入账号密码",
   "Error.UnValidatedAddress":"地址错误",
-  "Error.NotEnoughLumens":"XLM不足",
+  "Error.NotEnoughLumens":"RBC不足",
 
   "Account.AccountName":"账户名称",
   "Account.Password":"密码",
@@ -149,7 +149,7 @@
   "Error.SaveHorizonFail": "保存恒星公网节点地址失败",
 
   "FederationName": "联邦账户名",
-  "FederationName.Description": "本服务由 fed.network 提供，你可以访问该网站以了解更多的信息。在这里你可以注册一个诸如 name*fed.network 的用户名，其他用户可以通过该用户名给你发送资产。但是需要注意的是本服务只是为了让用户便于输入地址，还请用户自行核对解析后的地址是否正确。注册一个地址需要支付 0.5 XLM。取消注册需要支付 1 XLM。",
+  "FederationName.Description": "本服务由 fed.network 提供，你可以访问该网站以了解更多的信息。在这里你可以注册一个诸如 name*fed.network 的用户名，其他用户可以通过该用户名给你发送资产。但是需要注意的是本服务只是为了让用户便于输入地址，还请用户自行核对解析后的地址是否正确。注册一个地址需要支付 0.5 RBC。取消注册需要支付 1 RBC。",
   "FederationName.Address": "你的地址：",
   "FederationName.Connecting": "正在与服务建立连接...",
   "FederationName.ConnectionFailed": "网络连接失败，请稍后再试",
@@ -200,7 +200,7 @@
   "Account.Skip":"跳过",
 
 
-  "Error.NotEnoughAssetToFundAccount":"发送XLM必须大于20才可以激活账户",
+  "Error.NotEnoughAssetToFundAccount":"发送RBC必须大于20才可以激活账户",
 
   "Error.NotEnoughAsset":"资产不足",
 
@@ -327,7 +327,7 @@
   "Congrats":"To da moon!",
   "CongratsMessage":"祝贺您！保存好信息后，您就可以开始使用彩虹钱包了。",
   "Error.AccountNotFund": "账户尚未激活。请查看帮助信息",
-  "Error.UnFundNeedXLM":"对方账户未激活，必须发送XLM进行激活",
+  "Error.UnFundNeedXLM":"对方账户未激活，必须发送RBC进行激活",
   "ERROR.SCANNER_CONTENT_VALIDATE":"二维码内容不正确",
 
   "About.Title":"关于",
@@ -516,11 +516,11 @@
   "auto_fund":"账户激活",
   "fund_success":"账户已经激活",
   "unfund":"账户尚未激活",
-  "fund_hint":"激活需要向该账户发送至少20XLM",
+  "fund_hint":"激活需要向该账户发送至少20RBC",
   "fund_askfor":"收币激活",
   "fund_free":"免费激活",
   "fund_free_title":"激活说明",
-  "fund_used_up":"免费激活名额已经用完，您可向朋友收取1XLM完成账户激活。",
+  "fund_used_up":"免费激活名额已经用完，您可向朋友收取1RBC完成账户激活。",
   "tickets":"工单",
   "autofund_hint":"请稍等，正在进行激活操作！",
   "manageOffer":"操作委单",

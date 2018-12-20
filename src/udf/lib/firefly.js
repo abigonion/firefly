@@ -15,7 +15,7 @@ var FFWAPI = /** @class */ (function () {
             this._baseIssuer = _base[1];
         }
         else {
-            this._baseCode = 'XLM';
+            this._baseCode = 'RBC';
         }
         if (counter.indexOf('_') > 0) {
             var _counter = counter.split('_');
@@ -23,7 +23,7 @@ var FFWAPI = /** @class */ (function () {
             this._counterIssuer = _counter[1];
         }
         else {
-            this._counterCode = 'XLM';
+            this._counterCode = 'RBC';
         }
     }
     FFWAPI.prototype.handle = function (urlPath) {
@@ -125,7 +125,7 @@ var FFWAPI = /** @class */ (function () {
 export { FFWAPI };
 var ASSET_TYPE_4 = 'credit_alphanum4';
 var ASSET_TYPE_12 = 'credit_alphanum12';
-//segment duration as millis since epoch. 
+//segment duration as millis since epoch.
 //Supported values are 1 minute (60000), 5 minutes (300000), 15 minutes (900000), 1 hour (3600000), 1 day (86400000) and 1 week (604800000).
 var RESOLUTIONS = {
     "1": 60000,
@@ -173,7 +173,7 @@ var tradeAggregationsParams = /** @class */ (function () {
         }
     }
     tradeAggregationsParams.prototype.isNativeAsset = function (code, issuer) {
-        if (code === 'XLM' && issuer === undefined) {
+        if (code === 'RBC' && issuer === undefined) {
             return true;
         }
         return false;

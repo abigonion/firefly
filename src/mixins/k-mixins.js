@@ -1,12 +1,12 @@
 /*
  * K线图mixins
- * @Date: 2018-03-08 15:52:16 
+ * @Date: 2018-03-08 15:52:16
  * @Last Modified time: 2018-03-15 10:15:19
- * @License MIT 
+ * @License MIT
  */
 import NP from 'number-precision'
-import { getTradeAggregation, getTradeAggregation1min, 
-    getTradeAggregation15min, getTradeAggregation1hour, 
+import { getTradeAggregation, getTradeAggregation1min,
+    getTradeAggregation15min, getTradeAggregation1hour,
     getTradeAggregation1day, getTradeAggregation1week,
     RESOLUTION_1MIN, RESOLUTION_15MIN, RESOLUTION_1HOUR, RESOLUTION_1DAY, RESOLUTION_1WEEK } from '@/api/tradeAggregation'
 import { getAsset, isNativeAsset } from '@/api/assets'
@@ -29,7 +29,7 @@ export default {
             "15min": RESOLUTION_15MIN,
             "1min": RESOLUTION_1MIN
           },
-          
+
           RESOLUTION_HOURS: {
             "week": 16800,//100周
             "day": 2400,//100天
@@ -37,12 +37,12 @@ export default {
             "15min": 120,//5天
             "1min": 120
         },
-            
+
             id: null,//元素主键
             ele: null,//echarts对象
             opt: null,
             colors: ['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
-            
+
             resolution_key: 'hour',
             resolution: RESOLUTION_1HOUR,
 
@@ -54,13 +54,13 @@ export default {
             boll:{upper: [], mid: [], lower: []},
             tinterval: null,//定时器
             lasttime: null,//上次的执行时间
-            
+
             //24小时的成交记录
             lastTradeAggregation: null,
             //最新的成交价格统计
             lastTrade:null,
             tradeInterval: null,//查询最新一次交易数据的interval
-            
+
             showKgraph: true
         }
     },
@@ -103,8 +103,8 @@ export default {
         return this.redUpGreenDown ? '#ef232a' : '#14b143'
       },
       titleData(){
-        let idf = isNativeAsset(this.base) ? 'XLM' : this.base.code+'-'+this.base.issuer
-        let idt = isNativeAsset(this.counter) ? 'XLM' : this.counter.code +'-'+this.counter.issuer
+        let idf = isNativeAsset(this.base) ? 'RBC' : this.base.code+'-'+this.base.issuer
+        let idt = isNativeAsset(this.counter) ? 'RBC' : this.counter.code +'-'+this.counter.issuer
         let key = idf + '_' + idt;
         let d = this.tradePairsStat[key]
         if(d){
@@ -115,7 +115,7 @@ export default {
         if(d){
             return this.genTitleDataEx(d)
         }
-      }  
+      }
     },
     beforeMount () {
         //生成随机的id
@@ -131,7 +131,7 @@ export default {
         }
         screen.orientation.lock('portrait');
         this.deleteTradeInterval()
-        
+
     },
     mounted () {
         console.log('----before mounted------')
@@ -148,7 +148,7 @@ export default {
             this.cleanData()
             this.fetch();
            // this.fetchLastTrade()
-            
+
         },
         cleanData(){
             this.ele = null
@@ -176,10 +176,10 @@ export default {
             start_time = this.start < 0 ? this.getStartTime() : this.start;
             end_time = this.end < 0 ? new Date().getTime() : this.end
           }
-          getTradeAggregation(getAsset(this.base), getAsset(this.counter), 
+          getTradeAggregation(getAsset(this.base), getAsset(this.counter),
             start_time, end_time, this.resolution, 200, 'desc')
             .then(data => {
-                
+
                 let records = data.records
                 if(!this.incremental){
                     console.log(`--------清理 data为空-------`)
@@ -188,7 +188,7 @@ export default {
                     this.data = []
                 }
                 records = records.reverse()
-                records.forEach(item=>{                   
+                records.forEach(item=>{
                     this.dates.push(new Date(item.timestamp).Format('MM-dd hh:mm'))
                     this.volumes.push(new Decimal(item.base_volume).add(item.counter_volume).toNumber())
                     this.subVolumes.push([Number(item.base_volume),Number(item.counter_volume)])
@@ -204,7 +204,7 @@ export default {
                 //this.opt.series[1].data = this.data
                 //this.opt.series[2].data = this.calculateMA(5)
                 //this.opt.series[3].data = this.calculateMA(10)
-                
+
                 //this.ele.setOption(this.opt)
             })
             .catch(err=>{

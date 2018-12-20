@@ -235,7 +235,7 @@ export default {
     TotalSum() {
       let pricemap = this.prices
       let data = this.balances.map(item=>{
-        let v = isNativeAsset(item) ? pricemap['XLM'] : pricemap[item.code + '-' + item.issuer]
+        let v = isNativeAsset(item) ? pricemap['RBC'] : pricemap[item.code + '-' + item.issuer]
         return v ? new Decimal(v.price || 0).times(item.balance) : new Decimal(0)
       })
       if(data.length === 0)return 0
@@ -472,7 +472,7 @@ export default {
     },
     toHelp(){
       // let t = new Date().getTime()
-      let site = 'https://wallet.fchain.io/manual/#1'
+      let site = '#'//https://wallet.fchain.io/manual/#1
       let title = this.$t('Menu.Help')
       this.$router.push({name: 'Help', params: { title, site }})
     },
@@ -503,6 +503,7 @@ export default {
     UnFundNotice,
   }
 }
+
 
 </script>
 

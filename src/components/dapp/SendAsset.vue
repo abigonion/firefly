@@ -1,7 +1,7 @@
 // 发送资产界面
 <template>
   <div class="send-asset-wrapper">
-    
+
     <!-- 显示支付界面 -->
     <div class="confirm-wrapper" v-show="step === 0">
       <div class="confirm-blank"></div>
@@ -20,7 +20,7 @@
             </div>
             <div style="clear:both"></div>
           </div>
-          
+
           <div class="confirm-content">
             <div class="confirm-title">
               <!-- <span v-if="appname">{{$t('Third.SendTo',[appname])}}</span> -->
@@ -53,7 +53,7 @@
               <div class="loading-wrapper textcenter" v-if="nodata">
                 {{$t('Error.NoData')}}
               </div>
-              
+
             </div>
           </div>
 
@@ -94,10 +94,10 @@
       </div>
     </v-bottom-sheet>
 
-    <loading :show="working" :loading="sending" :success="sendsuccess" :fail='sendfail' 
+    <loading :show="working" :loading="sending" :success="sendsuccess" :fail='sendfail'
       color="red" :title="loadingTitle" :msg="loadingError" :closeable="sendfail" @close="hiddenLoading"/>
 
-  </div>  
+  </div>
 </template>
 
 <script>
@@ -134,7 +134,7 @@ export default {
         //slidesPerView: 'auto',
         touchRatio: 0.2,
         slideToClickedSlide: true
-        
+
       },
 
       working: false,
@@ -143,7 +143,7 @@ export default {
       sendfail: false,
       loadingTitle: null,
       loadingError: null,
-      
+
     }
   },
   props: {
@@ -385,7 +385,7 @@ export default {
           data.filter(record => Number(record.source_amount) > 0)
             .forEach(record => {
               const key = (record.source_asset_type === 'native') ?
-                  'XLM' : record.source_asset_code + '-' + record.source_asset_issuer;
+                  'RBC' : record.source_asset_code + '-' + record.source_asset_issuer;
 
               if (key in paths) {
                 if ((Number(paths[key].source_amount) - Number(record.source_amount)) > 0) {
@@ -405,24 +405,24 @@ export default {
               if(isNativeAsset(asset)){
                 if(canSend(this.native.balance, this.reserve, amount, this.base_fee, 1)){
                   this.assets.push({
-                    id: 'XLM',code: 'XLM', issuer: 'stellar.org', 
-                    destId: origin.destination_asset_type === 'native' ? 
-                      'XLM': origin.destination_asset_code + '-' + origin.destination_asset_issuer,
+                    id: 'RBC',code: 'RBC', issuer: 'rainbow.link',
+                    destId: origin.destination_asset_type === 'native' ?
+                      'RBC': origin.destination_asset_code + '-' + origin.destination_asset_issuer,
                     amount: Number(origin.source_amount), destination_amount: origin.destination_amount,
                     path:origin.path,
                     origin
                   })
                 }
               }else{
-                if( (asset.balance - amount >= 0) && 
+                if( (asset.balance - amount >= 0) &&
                       canSend(this.native.balance, this.reserve, 0, this.base_fee, 1)){
-                  this.assets.push({code: origin.source_asset_code, 
-                    issuer: origin.source_asset_issuer, 
-                    amount: Number(origin.source_amount), 
+                  this.assets.push({code: origin.source_asset_code,
+                    issuer: origin.source_asset_issuer,
+                    amount: Number(origin.source_amount),
                     destination_amount: origin.destination_amount,
                     id: origin.source_asset_code + '-' + origin.source_asset_issuer,
-                    destId: origin.destination_asset_type === 'native' ? 
-                      'XLM': origin.destination_asset_code + '-' + origin.destination_asset_issuer,
+                    destId: origin.destination_asset_type === 'native' ?
+                      'RBC': origin.destination_asset_code + '-' + origin.destination_asset_issuer,
                     path:origin.path,
                     origin
                   })
@@ -441,7 +441,7 @@ export default {
           this.$nextTick(()=>{
             this.loading = false
           })
-          
+
         })
         .catch(err => {
           this.loading = false
@@ -566,7 +566,7 @@ export default {
     .address
       font-size: 12px
       color: $secondarycolor.font
-  
+
 
 
 .sheet-content

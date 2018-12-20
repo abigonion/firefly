@@ -1,8 +1,8 @@
 // 接收激活
 <template>
   <div class="page">
-    <toolbar :title="$t('fund_askfor')" 
-      :showmenuicon="false" 
+    <toolbar :title="$t('fund_askfor')"
+      :showmenuicon="false"
       :showbackicon="true"
       @goback="back"
       />
@@ -14,22 +14,22 @@
 
           <div class="label">{{$t('Asset')}}</div>
           <div class="value">
-            <span class="scode">XLM</span>
-            <span class="sissuer">stellar.org</span>
+            <span class="scode">RBC</span>
+            <span class="sissuer">rainbow.link</span>
           </div>
-         
+
           <v-text-field
               name="amount"
               :label="$t('Amount')"
               v-model="amount"
               dark
-              suffix="XLM"
+              suffix="RBC"
               type="Number"
               ></v-text-field>
             <div class="receive_asset_msg">
               <span>{{$t("ReceiveAssetMsg")}}</span><br/>
               <span v-if="amount>0">{{amount}}&nbsp;</span>
-              <span v-if="amount>0">XLM</span>
+              <span v-if="amount>0">RBC</span>
             </div>
             <div class="qrcode">
               <qrcode :text="qrtext" :callback="qrcodecallback"/>
@@ -53,7 +53,7 @@ import { mapState, mapActions, mapGetters} from 'vuex'
 import { isNativeAsset } from '@/api/assets'
 
 export default {
-  
+
   data(){
     return {
       showmenuicon: false,
@@ -70,13 +70,13 @@ export default {
       asset: state => state.asset.selected,
       assethosts: state => state.asset.assethosts,
     }),
-    
+
     qrtext(){
       // use stargaze pattern
       //{"stellar":{"payment":{"destination":"GAD2....5UZ6","amount":1,"asset":{"code":"BTC","issuer":"GATEMH....MTCH"}}}}
-      let data = {stellar:{payment:{
+      let data = {rainbow:{payment:{
         destination:this.account.address,amount: this.amount,
-        asset: { code: 'XLM'} }}}
+        asset: { code: 'RBC'} }}}
       return JSON.stringify(data)
     },
 
@@ -86,7 +86,7 @@ export default {
        }
        return false
     }
-  
+
   },
   mounted(){
   },
@@ -126,13 +126,13 @@ export default {
         this.$toasted.error('not support share')
       }
     },
-   
+
   },
   components: {
     Toolbar,
     Card,
     qrcode: QRCode,
-    
+
   }
 
 

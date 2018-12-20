@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 <template>
   <div class="page">
@@ -7,7 +7,7 @@
       <v-btn icon @click.native="showAccounts" slot="left-tool">
           <i class="material-icons font28">menu</i>
       </v-btn>
-    
+
        <v-btn icon slot='right-tool' @click="pickershow()">
         <i class="material-icons font28">&#xE145;</i>
       </v-btn>
@@ -16,15 +16,15 @@
     <accounts-nav :show="showaccountsview" @close="closeView"/>
 
     <div class="content">
-      <picker @select="pairchosen" 
-              :data="items" 
+      <picker @select="pairchosen"
+              :data="items"
               :selected-index="[itemsInitOrder,itemsInitOrder]"
               ref="picker1"
-              title="" 
+              title=""
               :cancelTxt="$t('Cancel')"
               :confirmTxt="$t('Confirm')"
       ></picker>
-      
+
 
 
       <card class="trade-card" padding="0px 0px">
@@ -32,7 +32,7 @@
           <scroll :refresh="reloadTradePairs" :readLabelTxt="readLabelTxt">
 
             <v-tabs  v-model="tagIndex" class="tabs-bg-dark" hide-slider grow color="transparent">
-              <v-tab class="tab1" @click="doFilter(item)" 
+              <v-tab class="tab1" @click="doFilter(item)"
                 v-for="(item,index) in allTags" :key="index">
                   {{allTagsLabel[index]}}
               </v-tab>
@@ -52,7 +52,7 @@
                           <div class="issuer" v-else-if="assethosts[pair.from.issuer]">{{assethosts[pair.from.issuer]}}</div>
                           <div class="issuer" v-else>{{pair.from.issuer | miniaddress}}</div>
                         </div>
-                        
+
                         <div class="flex1 exchange-wrapper" v-if="pair.custom" @click="trade(index,pair)">
                           <div class="exchange">
                             <i class="icons material-icons">&#xE8D4;</i>
@@ -67,8 +67,8 @@
                       </div>
                     </v-flex>
                     <v-flex xs8 @click="trade(index,pair)">
-                      <k-line 
-                        :base="pair.from" :counter="pair.to" 
+                      <k-line
+                        :base="pair.from" :counter="pair.to"
                         :height="56" :timeout="10*index"
                         :tradepairIndex="pair.tradepairIndex"
                         :ref="'kline'+pair.tradepairIndex"
@@ -85,7 +85,7 @@
                 </li>
               </ul>
             </v-tab-item>
-            
+
             </v-tabs>
 
           </scroll>
@@ -125,7 +125,7 @@ import { getTrades } from '@/api/trade'
 var moment = require('moment')
 import {Decimal} from 'decimal.js'
 import Scroll from '@/components/Scroll'
-import { REMOVE_TRADEPAIR_KLINE_DATA } from '@/store/modules/AccountsStore' 
+import { REMOVE_TRADEPAIR_KLINE_DATA } from '@/store/modules/AccountsStore'
 import { ZH_CN } from '@/locales/index'
 
 const TAG_ALL = 'All', TAG_XCN = 'XCN', TAG_XLM = 'XLM', TAG_BTC = 'BTC', TAG_ETH = 'ETH', TAG_CUSTOM = '_CUSTOM', TAG_XFF = 'XFF'
@@ -177,17 +177,17 @@ export default {
       if(this.lastUpdateTradePairStatTime){
         return this.$t('lastUpdate')+':' + new moment(this.lastUpdateTradePairStatTime).format('YYYY-MM-DD HH:mm:ss')
       }else{
-        return 'ReleaseToRefresh'  
+        return 'ReleaseToRefresh'
       }
     },
-    
+
     pairItems(){
       let custom=[];
       let custom_ids = []
       this.tradepairs.custom.forEach((item,index) => {
           custom.push(Object.assign({}, item,{tradepairIndex: 'custom_'+index, custom: true,index}))
-          let idf = isNativeAsset(item.from) ? 'XLM' : item.from.code+'-'+item.from.issuer
-          let idt = isNativeAsset(item.to) ? 'XLM' : item.to.code +'-'+item.to.issuer
+          let idf = isNativeAsset(item.from) ? 'RBC' : item.from.code+'-'+item.from.issuer
+          let idt = isNativeAsset(item.to) ? 'RBC' : item.to.code +'-'+item.to.issuer
           custom_ids.push(idf+'_'+idt)
           custom_ids.push(idt+'_'+idf)
       })
@@ -197,15 +197,15 @@ export default {
       })
 
       let syspairs = Object.assign({}, this.sysTradePairs)
-      
+
       let copypairs = {}
       for(let key  in syspairs){
         let arr=  syspairs[key]
         let copyarr = []
         for(let i=0,n=arr.length; i<n; i++){
           let item = arr[i]
-          let idf = isNativeAsset(item.from) ? 'XLM' : item.from.code+'-'+item.from.issuer
-          let idt = isNativeAsset(item.to) ? 'XLM' : item.to.code +'-'+item.to.issuer
+          let idf = isNativeAsset(item.from) ? 'RBC' : item.from.code+'-'+item.from.issuer
+          let idt = isNativeAsset(item.to) ? 'RBC' : item.to.code +'-'+item.to.issuer
           let isChoosed = false
           let ida = idf +'_'+idt
           let idb = idt +'_'+idf
@@ -228,7 +228,7 @@ export default {
         })
         return result
       }
-      this.tradepairs.sys.forEach((item,index)=>{        
+      this.tradepairs.sys.forEach((item,index)=>{
         if(this.filterTag === TAG_ALL || item.to.code === this.filterTag){
           result.push(Object.assign({},item,{tradepairIndex: 'sys_'+index, custom: false}))
         }
@@ -255,7 +255,7 @@ export default {
       this.balances.forEach((element,i)=>{
         let y = {'value':i,text:{'code':element.code,host:hosts[i]}}
         x.push(y)
-      })     
+      })
       return x
       // return [{values,hosts},{values,hosts}]
     },
@@ -268,7 +268,7 @@ export default {
   watch:{
   },
   beforeMount(){
-    
+
     this.initTagAndLables()
     //保存默认的交易对
     // this.saveDefaultTradePairs()
@@ -323,8 +323,8 @@ export default {
       let ids = this.getSysPairIds()
       for(let i=0,n=custom.length;i<n;i++){
         let item = custom[i]
-        let idf = isNativeAsset(item.from) ? 'XLM' : item.from.code+'-'+item.from.issuer
-        let idt = isNativeAsset(item.to) ? 'XLM' : item.to.code +'-'+item.to.issuer
+        let idf = isNativeAsset(item.from) ? 'RBC' : item.from.code+'-'+item.from.issuer
+        let idt = isNativeAsset(item.to) ? 'RBC' : item.to.code +'-'+item.to.issuer
         if(ids.indexOf(idf+'_'+idt) >=0)continue;
         promises.push(this.saveTradePairStat({base: getAsset(custom[i].from), counter: getAsset(custom[i].to)}))
       }
@@ -344,8 +344,8 @@ export default {
         let arr = this.sysTradePairs[key]
         for(let i=0,n=arr.length;i<n;i++){
           let item = arr[i]
-          let idf = isNativeAsset(item.from) ? 'XLM' : item.from.code+'-'+item.from.issuer
-          let idt = isNativeAsset(item.to) ? 'XLM' : item.to.code +'-'+item.to.issuer
+          let idf = isNativeAsset(item.from) ? 'RBC' : item.from.code+'-'+item.from.issuer
+          let idt = isNativeAsset(item.to) ? 'RBC' : item.to.code +'-'+item.to.issuer
           let ida = idf +'_'+idt
           ids.push(ida)
         }
@@ -382,15 +382,15 @@ export default {
       let from_issuer = this.balances[indexPair[0]].issuer
       let to_code = this.balances[indexPair[1]].code
       let to_issuer = this.balances[indexPair[1]].issuer
-      let pair =  { from: {code:from_code,issuer:from_issuer}, 
+      let pair =  { from: {code:from_code,issuer:from_issuer},
               to: { code: to_code, issuer: to_issuer}  }
-      let key = from_code + (from_issuer||'stellar.org') + to_code + (to_issuer||'stellar.org')
+      let key = from_code + (from_issuer||'rainbow.link') + to_code + (to_issuer||'rainbow.link')
       for (let tp of this.tradepairs.custom){
-        let key1 = tp.from.code + (tp.from.issuer||'stellar.org')+tp.to.code + (tp.to.issuer||'stellar.org')
-        let key2 = tp.to.code + (tp.to.issuer||'stellar.org')+tp.from.code + (tp.from.issuer||'stellar.org')
+        let key1 = tp.from.code + (tp.from.issuer||'rainbow.link')+tp.to.code + (tp.to.issuer||'rainbow.link')
+        let key2 = tp.to.code + (tp.to.issuer||'rainbow.link')+tp.from.code + (tp.from.issuer||'rainbow.link')
         if(key === key1 || key === key2){
           this.$toasted.error(this.$t('Error.AddTradePair.ExistPair'))
-          return 
+          return
         }
       }
       return this.addOK(pair)
@@ -506,8 +506,8 @@ export default {
       },1000)
     },
     delPairFromCustom(pair){
-      let idf1 = isNativeAsset(pair.from) ? 'XLM' : pair.from.code+'-'+pair.from.issuer
-      let idt1 = isNativeAsset(pair.to) ? 'XLM' : pair.to.code +'-'+pair.to.issuer 
+      let idf1 = isNativeAsset(pair.from) ? 'RBC' : pair.from.code+'-'+pair.from.issuer
+      let idt1 = isNativeAsset(pair.to) ? 'RBC' : pair.to.code +'-'+pair.to.issuer
       let key1 = idf1 + "_" + idt1;
       let key2 = idt1 + "_" + idf1;
       let index = -1
@@ -515,8 +515,8 @@ export default {
       let tradepair = null
       for(let i=0,n=data.length;i<n;i++){
         let item = data[i]
-        let idf2 = isNativeAsset(item.from) ? 'XLM' : item.from.code+'-'+item.from.issuer
-        let idt2 = isNativeAsset(item.to) ? 'XLM' : item.to.code +'-'+item.to.issuer
+        let idf2 = isNativeAsset(item.from) ? 'RBC' : item.from.code+'-'+item.from.issuer
+        let idt2 = isNativeAsset(item.to) ? 'RBC' : item.to.code +'-'+item.to.issuer
         let key = idf2 + '_' + idt2
         if(key === key1 || key === key2){
           index = i;
@@ -530,7 +530,7 @@ export default {
       }
     }
 
-   
+
   },
   components: {
     Toolbar,
@@ -563,7 +563,7 @@ export default {
   .pair-wrapper
     position: relative
     z-index: 2
-    padding: 2px 2px 
+    padding: 2px 2px
     padding-bottom: 0px
     background: $secondarycolor.gray
     width: 100%
@@ -610,7 +610,7 @@ export default {
   background: $primarycolor.gray
 .tradepair-li:last-child
   border-bottom: 0px
-.operate-box 
+.operate-box
   position: absolute
   z-index: 1
   height: 100%
