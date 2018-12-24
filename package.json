@@ -1,6 +1,6 @@
 {
   "name": "rainbow",
-  "version": "2.1.12",
+  "version": "1.0.0",
   "description": "rainbow mobile wallet",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/ranbow/issues"
   },
-  "github": "https://github.com/ranbow",
+  "github": "https://github.com/rainbow",
   "homepage": "https://rainbow.link",
   "scripts": {
     "dev": "node build/dev-server.js",

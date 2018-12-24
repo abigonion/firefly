@@ -14,7 +14,7 @@ export const APP_GITHUB = pkg.github
 export const OFFICIAL_SITE = 'www.rainbow.link'
 
 // APP 最新版本信息
-export const CHECK_UPDATE = 'https://raw.githubusercontent.com/StellarCN/firefly/master/package.json'
+export const CHECK_UPDATE = '#'
 //资产说明
 export const ASSET_INFO_BASE_URL = 'http://sudo38/docs/assets/'
 
@@ -89,7 +89,7 @@ export const AXIOS_DEFAULT_TIMEOUT = 5000
 
 let _default_trade_pair = undefined
 // 默认交易对从fchain获取
-const API_TRADE_PAIR = `https://api.fchain.io/tradepairs`
+const API_TRADE_PAIR = '#'
 export function defaultTradePairsAPI(){
   let t = new Date().getTime()
   axios.get(API_TRADE_PAIR+'?r='+t,{
@@ -188,7 +188,7 @@ export const WORD_ICON = {
   'A':'icon-shouzimuzhanwei'
 }
 
-export const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
+export const CORS_PROXY = "#"
 
 export function getVersionInfo(){
   if(!chcp){
@@ -211,7 +211,7 @@ export function getAddressPinInfo(url){
 }
 
 
-export const DEFAULT_TRADEPAIR_API = 'https://api.fchain.io/v2/api/trade_aggregations'
+export const DEFAULT_TRADEPAIR_API = '#'
 
 // 查询默认的交易对和行情
 export function getDefaultSysTradePairAndStat(){
@@ -243,8 +243,8 @@ export function getFundConfig(){
   return _fund_config;
 }
 
-let fund_config_url = `https://update.fchain.io/fund/fund.json`
-let fund_config_url_debug = `https://update.fchain.io/fund/fund_test.json`
+let fund_config_url = `#`
+let fund_config_url_debug = `#`
 export function initFundConfig(callback){
   let r = new Date().getTime()
   let url = null
@@ -286,7 +286,7 @@ export function fetchFundConfig(){
   })
 }
 
-export const DAPP_FETCH_URL = 'https://update.fchain.io/config/dapp.json'
+export const DAPP_FETCH_URL = '#'
 
 export function fetchSysDApps(){
   let url = DAPP_FETCH_URL + '?r=' + new Date().getTime()
@@ -316,4 +316,4 @@ export function fetchSysDApps(){
     // })
 }
 
-export const KYC_SITE = 'http://jn279.gitee.io/firefly_assets/kyc'
+export const KYC_SITE = '#'

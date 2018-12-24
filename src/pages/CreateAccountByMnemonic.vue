@@ -102,8 +102,8 @@ export default {
       setCreateAccountData: 'setCreateAccountData'
     }),
     chooseName(){
-      let planetNum = Math.floor(Math.random()*(RandomPlanetsCount -1))
-      let colorNum = Math.floor(Math.random()*(RandomColorsCount - 1))
+      let planetNum = Math.floor(Math.random()*(RandomPlanetsCount))
+      let colorNum = Math.floor(Math.random()*(RandomColorsCount))
       let colors = this.$t('Random.Colors').split("|")
       let planets = this.$t('Random.Planets').split("|")
       this.name =  colors[colorNum]+planets[planetNum]

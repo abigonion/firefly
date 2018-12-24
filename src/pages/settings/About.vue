@@ -17,15 +17,15 @@
             <img src="../../assets/img/logox.png" alt="firefly" class="logo-img"/>
           </div>
           <div class="textcenter appname">
-            FireFly
+            Rainbow
           </div>
           <div class="textcenter appversion">
-            {{$t('Version')}}:{{appversion}}<span v-if="isDebug">&nbsp;DEBUG</span>
+            {{$t('Version')}}:{{appversion}}<span v-if="isDebug">&nbsp;</span>
           </div>
           <div class="textcenter appversion" v-if="currentWebVersion">
             {{currentWebVersion}}
           </div>
-          
+
         </div>
       </card>
       <card class="detail-card" padding="10px 10px" margin="10px 0 10px 0">
@@ -42,7 +42,7 @@
                 <div class="label">
                     {{$t('OfficialSite')}}
                 </div>
-                <div class="value"> 
+                <div class="value">
                     {{officialSite}}
                     <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
                 </div>
@@ -121,7 +121,7 @@ export default {
     }
   },
   mounted() {
-   
+
    document.addEventListener('chcp_nothingToUpdate',()=>{
      this.$toasted.show(this.$t('NothingToInstall'))
    }, false)
@@ -186,7 +186,7 @@ export default {
     },
     toDebug(){
       //window.location.href = 'http://192.168.2.253:3000'
-      window.open('http://192.168.2.253:3000', "_self");
+      window.open('127.0.0.1', "_self");
     },
     toScanLogin(){
       this.$router.push({name: 'Login'})

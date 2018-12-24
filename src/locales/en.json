@@ -56,7 +56,7 @@
   "Error.GetAccountInfoError": "get account info error",
   "Error.NoPassword":"please input account's password",
   "Error.UnValidatedAddress":"invalid address",
-  "Error.NotEnoughLumens":"not Enough Lumens",
+  "Error.NotEnoughLumens":"not Enough Waterdrop",
 
 
   "Error.NotValidSeed":"seed is not valid",
@@ -175,7 +175,7 @@
 
 
 
-  "Random.Planets":"Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune|Pluto",
+  "Random.Planets":"Rainbow|waterdrop",
   "Random.Colors":"Red|Orange|Yellow|Green|Cyan|Blue|Violet|Black|White",
 
   "payment":"payment",

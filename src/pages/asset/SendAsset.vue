@@ -382,7 +382,7 @@ export default {
       try {
         text = text.trim()
         let data = JSON.parse(text)
-        if (data.stellar) {
+        if (data.rainbow) {
           if (data.rainbow.payment) {
             let payment = data.rainbow.payment
             if (payment.asset) {

@@ -44,7 +44,7 @@ export const MOMENT_LANGUAGES = {
   'zh_hk': 'zh-hk',
   'th':'th'
   // 'zh_tw': 'zh-tw'
-  
+
 }
 
 export function getDeviceLanguage(){
@@ -81,6 +81,6 @@ export const i18n = new VueI18n({
   }
 })
 
-export const RandomPlanetsCount = 9
+export const RandomPlanetsCount = 2
 export const RandomColorsCount = 9
 

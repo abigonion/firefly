@@ -48,7 +48,7 @@
         <h2 class="help-t pt-1 pl-2">六、联系我们</h2>
         <p class="help-c pl-2">
           <!--1.TG群：<span @click="toHref('https://t.me/fchain_io')">https://t.me/fchain_io</span><br/>-->
-          1.网址：<span @click="toHref('https://sudo38.com/')">https://sudo38.com/</span><br/>
+          1.网址：<span @click="toHref('https://rainbow.link/')">https://rainbow.link/</span><br/>
         </p>
 
 
