@@ -65,16 +65,16 @@
                 <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
               </div>
             </div>
-            <div class="row" v-if="isDebug" @click="toScanLogin">
-              <div class="label">Scan to Login</div>
-              <div class="value">
-                <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
-              </div>
-            </div>
+            <!--<div class="row" v-if="isDebug" @click="toScanLogin">-->
+              <!--<div class="label">Scan to Login</div>-->
+              <!--<div class="value">-->
+                <!--<i class="material-icons vcenter f-right">keyboard_arrow_right</i>-->
+              <!--</div>-->
+            <!--</div>-->
 
-            <div class="field_btn">
-              <v-btn :loading="working" class="error btn_ok" @click.stop="checkForUpdates">{{$t('CheckForUpdates')}}</v-btn>
-            </div>
+            <!--<div class="field_btn">-->
+              <!--<v-btn :loading="working" class="error btn_ok" @click.stop="checkForUpdates">{{$t('CheckForUpdates')}}</v-btn>-->
+            <!--</div>-->
         </div>
       </card>
     </div>

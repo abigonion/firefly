@@ -50,10 +50,12 @@ const actions = {
     //commit(CLEAN_ACCOUNT)
     console.log('---------get account info ---'+ address)
     let info = await accountapi.getAccountInfo(address)
+    console.dir(info)
     let assets = info.balances.map(ele=>{
       if(ele.asset_type === 'native')return 'RBC'
       return ele.asset_issuer
     })
+    console.log('-----------get assets ' + assets)
     await dispatch('getAssetsAccounts',assets)
     await dispatch('getPayments', address)
 

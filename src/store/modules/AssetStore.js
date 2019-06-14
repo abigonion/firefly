@@ -102,8 +102,6 @@ const mutations = {
         data[hosts[i].issuer] = hosts[i].host
       }
       state.assethosts = Object.assign({},state.assethosts, data)
-      console.log(`---------get all asset hosts---`)
-      console.log(state.assethosts)
     }
   }
 

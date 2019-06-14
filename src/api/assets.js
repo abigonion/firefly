@@ -34,7 +34,7 @@ export function getAsset(code, issuer) {
   }
 }
 
-export const ALL_HOSTS_URL = 'https://api.fchain.io/asset_host'
+export const ALL_HOSTS_URL = ''
 //查询所有的资产的host
 export function allHosts(){
   return axios.get(ALL_HOSTS_URL)

@@ -34,9 +34,9 @@
             <div class="qrcode">
               <qrcode :text="qrtext" :callback="qrcodecallback"/>
             </div>
-            <div class="shart_btn mt-2 mb-2" v-if="shareEnable">
-              <v-btn class="primary btn_ok" @click="share">{{$t('Share')}}</v-btn>
-            </div>
+            <!--<div class="shart_btn mt-2 mb-2" v-if="shareEnable">-->
+              <!--<v-btn class="primary btn_ok" @click="share">{{$t('Share')}}</v-btn>-->
+            <!--</div>-->
             <div class="pa-2"></div>
         </div>
       </card>

@@ -11,7 +11,7 @@ export const APP_VERSION = pkg.version
 
 export const APP_GITHUB = pkg.github
 
-export const OFFICIAL_SITE = 'www.rainbow.link'
+export const OFFICIAL_SITE = 'http://lhtech.info'
 
 // APP 最新版本信息
 export const CHECK_UPDATE = '#'
@@ -25,8 +25,7 @@ export const FED_NETWORK_BIND_ADDRESS = 'bind*fed.network'
 //通账池
 export const INFLATION_POOL = [
   {
-    host:'xlmpool.com',
-    address: 'GA3FUYFOPWZ25YXTCA73RK2UGONHCO27OHQRSGV3VCE67UEPEFEDCOPA'
+
   }
 ]
 
@@ -188,7 +187,7 @@ export const WORD_ICON = {
   'A':'icon-shouzimuzhanwei'
 }
 
-export const CORS_PROXY = "#"
+export const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
 
 export function getVersionInfo(){
   if(!chcp){

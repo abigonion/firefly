@@ -243,7 +243,6 @@ export default {
     },
     ...mapState({
       account: state => state.accounts.selectedAccount,
-      account: state => state.accounts.selectedAccount,
       accountData: state => state.accounts.accountData,
       islogin: state => (state.accounts.accountData.seed ? true : false),
       assethosts: state => state.asset.assethosts,

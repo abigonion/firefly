@@ -91,11 +91,6 @@
     <preference name="SplashScreenBackgroundColor" value="#3367d6" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="ShowSplashScreen" value="true" />
-    <chcp>
-        <auto-download enabled="false" />
-        <auto-install enabled="false" />
-        <config-file url="https://update.fchain.io/v2/chcp.json" />
-    </chcp>
     <engine name="ios" spec="^4.5.5" />
     <engine name="browser" spec="^5.0.4" />
     <engine name="android" spec="^6.3.0" />
