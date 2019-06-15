@@ -162,7 +162,7 @@ const getters = {
      let obj = {};
      if('native' === element.asset_type){
         obj.code = 'RBC'
-        obj.issuer = 'rainbow.link'
+        obj.issuer = 'lhtech.info'
       } else {
         obj.code = element.asset_code
         obj.issuer = element.asset_issuer

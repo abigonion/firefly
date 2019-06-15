@@ -18,7 +18,7 @@ export function isNativeAsset(_code,_issuer){
     issuer = _issuer
   }
   if(code!='RBC')return false
-  if(issuer && issuer!='rainbow.link')return false
+  if(issuer && issuer!='lhtech.info')return false
   return true
 }
 
@@ -47,11 +47,11 @@ export function assetHost(issuer){
 
 export function assetKey(base,counter){
   let result = `${base.code}`
-  if(base.issuer && 'rainbow.link'!== base.issuer){
+  if(base.issuer && 'lhtech.info'!== base.issuer){
     result += '-' + base.issuer
   }
   result += '_' + counter.code
-  if(counter.issuer && 'rainbow.link'!== counter.issuer){
+  if(counter.issuer && 'lhtech.info'!== counter.issuer){
     result += '-' + counter.issuer
   }
   return result;

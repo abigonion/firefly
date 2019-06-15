@@ -11,7 +11,7 @@ export const APP_VERSION = pkg.version
 
 export const APP_GITHUB = pkg.github
 
-export const OFFICIAL_SITE = 'http://lhtech.info'
+export const OFFICIAL_SITE = 'https://lhtech.info'
 
 // APP 最新版本信息
 export const CHECK_UPDATE = '#'
@@ -46,7 +46,7 @@ export const TRADE_PAIRS = [  {
 export const ASSETS_ISSUER_HOST = {
   'XLM': {
     code: 'RBC',
-    host: 'rainbow.link'
+    host: 'lhtech.info'
   },
   'GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX': {
     code: 'CNY',

@@ -11,7 +11,7 @@ const state = {
   //eg. https://api.yourdomain.com/deposit?address=GD6WU64OEP5C4LRBH6NK3MHYIA2ADN6K6II6EXPNVUR3ERBXT4AN4ACD&asset=BTC
   assets: {},//当前操作账户的资产的account数据，
 
-  assethosts: {RBC:'rainbow.link'} ,//资产的Host_name属性
+  assethosts: {RBC:'lhtech.info'} ,//资产的Host_name属性
 
 }
 

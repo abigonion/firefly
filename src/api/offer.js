@@ -108,7 +108,7 @@ export function myofferConvert(_sellasset,_buyasset,my){
       buycode = ele.buying.asset_code
       buyissuer = ele.buying.asset_issuer
     }
-    let stellarorg = 'rainbow.link'
+    let stellarorg = 'lhtech.info'
     if(stellarorg === sellasset.issuer){
       sellasset.issuer = null
     }

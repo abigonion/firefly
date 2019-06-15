@@ -15,7 +15,7 @@
           <div class="label">{{$t('Asset')}}</div>
           <div class="value">
             <span class="scode">RBC</span>
-            <span class="sissuer">rainbow.link</span>
+            <span class="sissuer">lhtech.info</span>
           </div>
 
           <v-text-field

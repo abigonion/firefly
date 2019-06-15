@@ -384,10 +384,10 @@ export default {
       let to_issuer = this.balances[indexPair[1]].issuer
       let pair =  { from: {code:from_code,issuer:from_issuer},
               to: { code: to_code, issuer: to_issuer}  }
-      let key = from_code + (from_issuer||'rainbow.link') + to_code + (to_issuer||'rainbow.link')
+      let key = from_code + (from_issuer||'lhtech.info') + to_code + (to_issuer||'lhtech.info')
       for (let tp of this.tradepairs.custom){
-        let key1 = tp.from.code + (tp.from.issuer||'rainbow.link')+tp.to.code + (tp.to.issuer||'rainbow.link')
-        let key2 = tp.to.code + (tp.to.issuer||'rainbow.link')+tp.from.code + (tp.from.issuer||'rainbow.link')
+        let key1 = tp.from.code + (tp.from.issuer||'lhtech.info')+tp.to.code + (tp.to.issuer||'lhtech.info')
+        let key2 = tp.to.code + (tp.to.issuer||'lhtech.info')+tp.from.code + (tp.from.issuer||'lhtech.info')
         if(key === key1 || key === key2){
           this.$toasted.error(this.$t('Error.AddTradePair.ExistPair'))
           return

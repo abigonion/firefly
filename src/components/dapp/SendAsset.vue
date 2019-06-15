@@ -405,7 +405,7 @@ export default {
               if(isNativeAsset(asset)){
                 if(canSend(this.native.balance, this.reserve, amount, this.base_fee, 1)){
                   this.assets.push({
-                    id: 'RBC',code: 'RBC', issuer: 'rainbow.link',
+                    id: 'RBC',code: 'RBC', issuer: 'lhtech.info',
                     destId: origin.destination_asset_type === 'native' ?
                       'RBC': origin.destination_asset_code + '-' + origin.destination_asset_issuer,
                     amount: Number(origin.source_amount), destination_amount: origin.destination_amount,
