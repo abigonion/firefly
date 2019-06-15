@@ -24,13 +24,13 @@ export function convertRecords(address,rows){
       case 'path_payment':
         t.isInbound = r.to === address;
         t.counterparty = t.isInbound ? r.from : r.to;
-        t.asset = r.asset_type == "native" ? {code: "RBC"} : {code:r.asset_code, issuer: r.asset_issuer};
+        t.asset = r.asset_type == "native" ? {code: "ORC"} : {code:r.asset_code, issuer: r.asset_issuer};
         t.amount = r.amount;
         break;
       case 'create_account':
         t.isInbound = r.account === address;
         t.counterparty = t.isInbound ? r.source_account : r.account;
-        t.asset = {code: "RBC"};
+        t.asset = {code: "ORC"};
         t.amount = r.starting_balance;
         break;
       default:

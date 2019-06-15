@@ -15,7 +15,7 @@ var FFWAPI = /** @class */ (function () {
             this._baseIssuer = _base[1];
         }
         else {
-            this._baseCode = 'RBC';
+            this._baseCode = 'ORC';
         }
         if (counter.indexOf('_') > 0) {
             var _counter = counter.split('_');
@@ -23,7 +23,7 @@ var FFWAPI = /** @class */ (function () {
             this._counterIssuer = _counter[1];
         }
         else {
-            this._counterCode = 'RBC';
+            this._counterCode = 'ORC';
         }
     }
     FFWAPI.prototype.handle = function (urlPath) {
@@ -173,7 +173,7 @@ var tradeAggregationsParams = /** @class */ (function () {
         }
     }
     tradeAggregationsParams.prototype.isNativeAsset = function (code, issuer) {
-        if (code === 'RBC' && issuer === undefined) {
+        if (code === 'ORC' && issuer === undefined) {
             return true;
         }
         return false;

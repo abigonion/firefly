@@ -52,7 +52,7 @@ const actions = {
     let info = await accountapi.getAccountInfo(address)
     console.dir(info)
     let assets = info.balances.map(ele=>{
-      if(ele.asset_type === 'native')return 'RBC'
+      if(ele.asset_type === 'native')return 'ORC'
       return ele.asset_issuer
     })
     console.log('-----------get assets ' + assets)
@@ -161,7 +161,7 @@ const getters = {
     info.forEach((element,index) => {
      let obj = {};
      if('native' === element.asset_type){
-        obj.code = 'RBC'
+        obj.code = 'ORC'
         obj.issuer = 'lhtech.info'
       } else {
         obj.code = element.asset_code

@@ -14,7 +14,7 @@
 
           <div class="label">{{$t('Asset')}}</div>
           <div class="value">
-            <span class="scode">RBC</span>
+            <span class="scode">ORC</span>
             <span class="sissuer">lhtech.info</span>
           </div>
 
@@ -23,13 +23,13 @@
               :label="$t('Amount')"
               v-model="amount"
               dark
-              suffix="RBC"
+              suffix="ORC"
               type="Number"
               ></v-text-field>
             <div class="receive_asset_msg">
               <span>{{$t("ReceiveAssetMsg")}}</span><br/>
               <span v-if="amount>0">{{amount}}&nbsp;</span>
-              <span v-if="amount>0">RBC</span>
+              <span v-if="amount>0">ORC</span>
             </div>
             <div class="qrcode">
               <qrcode :text="qrtext" :callback="qrcodecallback"/>
@@ -76,7 +76,7 @@ export default {
       //{"stellar":{"payment":{"destination":"GAD2....5UZ6","amount":1,"asset":{"code":"BTC","issuer":"GATEMH....MTCH"}}}}
       let data = {rainbow:{payment:{
         destination:this.account.address,amount: this.amount,
-        asset: { code: 'RBC'} }}}
+        asset: { code: 'ORC'} }}}
       return JSON.stringify(data)
     },
 

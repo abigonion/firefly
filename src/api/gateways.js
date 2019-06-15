@@ -14,9 +14,9 @@ export const APP_GITHUB = pkg.github
 export const OFFICIAL_SITE = 'https://lhtech.info'
 
 // APP 最新版本信息
-export const CHECK_UPDATE = '#'
+export const CHECK_UPDATE = 'https://raw.githubusercontent.com/abigonion/firefly/ORC/package.json'
 //资产说明
-export const ASSET_INFO_BASE_URL = 'https://raw.githubusercontent.com/abigonion/firefly/RBC/docs/RBC.json'
+export const ASSET_INFO_BASE_URL = 'https://raw.githubusercontent.com/abigonion/firefly/ORC/docs/ORC.json'
 
 //default interval : 1分钟
 export const DEFAULT_INTERVAL = 60000
@@ -45,7 +45,7 @@ export const TRADE_PAIRS = [  {
 
 export const ASSETS_ISSUER_HOST = {
   'XLM': {
-    code: 'RBC',
+    code: 'ORC',
     host: 'lhtech.info'
   },
   'GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX': {

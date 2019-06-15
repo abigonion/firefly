@@ -90,6 +90,7 @@ export default {
                 //     name: 'KYC',
                 //     icon: "security"
                 // },
+                //充值提现
                 //  {
                 //     title: "Menu.Funding",
                 //     name: "Funding",
@@ -99,27 +100,30 @@ export default {
                     title: "Menu.Settings",
                     name: "Settings",
                     icon: "settings"
-                }
+                },
+                //轻应用
                 // {
                 //     title: "Title.ThirdApp",
                 //     name: "Apps",
                 //     icon: "apps"
                 // },
+                //帮助界面
                 // {
                 //     title: "Menu.Help",
                 //     name: "Help",
                 //     icon: "help"
-                // }
-              //   {
-              //   title: "Menu.MessageCenter",
-              //   name: "MessageCenter",
-              //   icon: "message"
-              // },
-              //  {
-              //   title: "tickets",
-              //   name: "Tickets",
-              //   icon: "assignment"
-              // }
+                // },
+                 {
+                title: "Menu.MessageCenter",
+                name: "MessageCenter",
+                icon: "message"
+              }
+              //工单
+            //    {
+            //     title: "tickets",
+            //     name: "Tickets",
+            //     icon: "assignment"
+            //   }
             ],
             myofferpage:{ name: 'History', params: { active: 'offer' } },
             historypage:{ name: 'History', params: { active: 'transaction' } }

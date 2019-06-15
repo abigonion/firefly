@@ -17,7 +17,7 @@ export function isNativeAsset(_code,_issuer){
     code = _code
     issuer = _issuer
   }
-  if(code!='RBC')return false
+  if(code!='ORC')return false
   if(issuer && issuer!='lhtech.info')return false
   return true
 }

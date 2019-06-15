@@ -108,7 +108,7 @@
   "ReleaseToRefresh":"release to refresh",
   "Loading":"Loading...",
   "LoadOver":"Load Over",
-  "LoadFail":"Load Fail",
+  "LoadFail":"No assets detected",
   "Detail":"Detail",
   "DateTime":"Datetime",
   "From":"From",
@@ -142,8 +142,8 @@
   "PinCode":"pin code",
   "Language":"language",
   "ModifyAccount":"modify account",
-  "FederationAddress":"federation address",
-  "FederationAddressDesc":"federation address description",
+  "FederationAddress":"domain address",
+  "FederationAddressDesc":"domain address description",
   "InflationAddress": "inflation address",
   "InflationDesc": "inflation desc",
   "PublicNetUrl":"Rainbow public network URL",
@@ -154,8 +154,8 @@
   "Error.SaveHorizonFail": "save public network URL failed",
 
   "FederationName": "Federation Name",
-  "FederationName.Description": "This service is provided by fed.network, you can visit this website for more information. Here you can register a username such as name*fed.network, and other users can send the asset to you with it. However, it should be noted that this service is only for the convenience of the user in inputting the address, please recheck the really address by yourself. To register for an address you need to pay 0.5 RBC. To ungegister for an address you need to pay 20 RBC.",
-  "FederationName.Address": "Your federation address:",
+  "FederationName.Description": "This service is provided by fed.network, you can visit this website for more information. Here you can register a username such as name*fed.network, and other users can send the asset to you with it. However, it should be noted that this service is only for the convenience of the user in inputting the address, please recheck the really address by yourself. To register for an address you need to pay 0.5 ORC. To ungegister for an address you need to pay 20 ORC.",
+  "FederationName.Address": "Your domain address:",
   "FederationName.Connecting": "Connecting...",
   "FederationName.ConnectionFailed": "Network connection failed. Please try later.",
   "FederationName.Available": "The name is available，please pay as soon as possible",
@@ -204,7 +204,7 @@
   "Account.SecretStoredAndExit":"backed up the secret, skip this step",
   "Account.Skip":"Skip",
 
-  "Error.NotEnoughAssetToFundAccount":"send more than 20 RBC to fund the target",
+  "Error.NotEnoughAssetToFundAccount":"send more than 20 ORC to fund the target",
 
   "Error.NotEnoughAsset":"asset funding insufficient",
 
@@ -332,7 +332,7 @@
 
 
   "Error.AccountNotFund": "Your account have not been activated. View the help information to continue.",
-  "Error.UnFundNeedXLM":"The destination is unactivated, you need send RBC for activation",
+  "Error.UnFundNeedXLM":"The destination is unactivated, you need send ORC for activation",
   "ERROR.SCANNER_CONTENT_VALIDATE":"QR code content is not validated",
 
 
@@ -524,7 +524,7 @@
   "auto_fund":"fund",
   "fund_success":"Successfully funded",
   "unfund":"account unfunded",
-  "fund_hint":"need more than 20 RBC to fund",
+  "fund_hint":"need more than 20 ORC to fund",
   "fund_askfor":"ask for funding",
   "fund_free":"free funding",
   "fund_free_title":"funding summary",
@@ -535,8 +535,8 @@
   "createPassiveOffer":"create passive offer",
   "accountMerge":"merge account",
   "send_to_exchange":"sendint to exchange {0} with no memo, are you sure?",
-  "update_2_native_hint":"Hi, this version is about to stop updating. The Rainbow team has launched a new version of wallet, smooth and fast. Please visit <b>https://wallet.fchain.io</b> to download."
-
+  "update_2_native_hint":"Hi, this version is about to stop updating. The Rainbow team has launched a new version of wallet, smooth and fast. Please visit <b>https://wallet.fchain.io</b> to download.",
+  "UpdataTip":"Make sure you have recorded a mnemonic or private key before updating."
 
 
 

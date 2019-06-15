@@ -2,79 +2,71 @@
  * 关于我们界面，显示系统版本等内容
  */
 <template>
-  <div class="page" >
-    <toolbar :title="$t('About.Title')"
+  <div class="page">
+    <toolbar
+      :title="$t('About.Title')"
       :showmenuicon="showmenuicon"
       :showbackicon="showbackicon"
       @goback="back"
       ref="toolbar"
-      >
-    </toolbar>
+    ></toolbar>
     <div class="content">
       <card class="icard" padding="20px 10px">
-        <div slot="card-content" class="">
+        <div slot="card-content" class>
           <div class="logo-wrapper" @click="toDebug">
-            <img src="../../assets/img/logox.png" alt="firefly" class="logo-img"/>
+            <img src="../../assets/img/logox.png" alt="firefly" class="logo-img">
           </div>
-          <div class="textcenter appname">
-            Rainbow
-          </div>
+          <div class="textcenter appname">Rainbow</div>
           <div class="textcenter appversion">
-            {{$t('Version')}}:{{appversion}}<span v-if="isDebug">&nbsp;</span>
+            {{$t('Version')}}:{{appversion}}
+            <span v-if="isDebug">&nbsp;</span>
           </div>
-          <div class="textcenter appversion" v-if="currentWebVersion">
-            {{currentWebVersion}}
-          </div>
-
+          <div class="textcenter appversion" v-if="currentWebVersion">{{currentWebVersion}}</div>
         </div>
       </card>
       <card class="detail-card" padding="10px 10px" margin="10px 0 10px 0">
         <div class="card-content" slot="card-content">
-            <div class="row" @click="toTermOfServices">
-                <div class="label">
-                    {{$t('TermsOfServiceTitle')}}
-                </div>
-                <div class="value">
-                    <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
-                </div>
+          <div class="row" @click="toTermOfServices">
+            <div class="label">{{$t('TermsOfServiceTitle')}}</div>
+            <div class="value">
+              <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
             </div>
-            <div class="row" @click="openURL(officialSite)">
-                <div class="label">
-                    {{$t('OfficialSite')}}
-                </div>
-                <div class="value">
-                    {{officialSite}}
-                    <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
-                </div>
+          </div>
+          <div class="row" @click="openURL(officialSite)">
+            <div class="label">{{$t('OfficialSite')}}</div>
+            <div class="value">
+              {{officialSite}}
+              <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
             </div>
-            <div class="row"  @click="openURL(fireflyGithub)">
-                <div class="label">
-                    github
-                </div>
-                <div class="value">
-                    {{fireflyGithub}}
-                     <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
-                </div>
+          </div>
+          <div class="row" @click="openURL(fireflyGithub)">
+            <div class="label">github</div>
+            <div class="value">
+              {{fireflyGithub}}
+              <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
             </div>
-            <div class="row" v-if="latestVersion">
-              <div class="label">
-                {{$t('LatestVersion')}}
-              </div>
-              <div class="value">
-                {{latestVersion}}
-                <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
-              </div>
+          </div>
+          <div class="row" v-if="latestVersion">
+            <div class="label">{{$t('LatestVersion')}}</div>
+            <div class="value">
+              {{latestVersion}}
+              <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
             </div>
-            <!--<div class="row" v-if="isDebug" @click="toScanLogin">-->
-              <!--<div class="label">Scan to Login</div>-->
-              <!--<div class="value">-->
-                <!--<i class="material-icons vcenter f-right">keyboard_arrow_right</i>-->
-              <!--</div>-->
-            <!--</div>-->
+          </div>
+          <!-- <div class="row" v-if="isDebug" @click="toScanLogin">
+              <div class="label">Scan to Login</div>>
+             <div class="value">
+               <i class="material-icons vcenter f-right">keyboard_arrow_right</i>
+             </div>
+          </div>-->
 
-            <!--<div class="field_btn">-->
-              <!--<v-btn :loading="working" class="error btn_ok" @click.stop="checkForUpdates">{{$t('CheckForUpdates')}}</v-btn>-->
-            <!--</div>-->
+          <!-- <div class="field_btn">
+            <v-btn
+              :loading="working"
+              class="error btn_ok"
+              @click.stop="checkForUpdates"
+            >{{$t('CheckForUpdates')}}</v-btn>
+          </div> -->
         </div>
       </card>
     </div>
@@ -93,7 +85,7 @@ import {
   DEBUG
 } from "@/api/gateways";
 const semver = require("semver");
-import  debounce  from 'lodash/debounce'
+import debounce from "lodash/debounce";
 
 export default {
   data() {
@@ -109,65 +101,71 @@ export default {
       working: false,
       counter: 0,
       isDebug: DEBUG,
-      currentWebVersion:null,
+      currentWebVersion: null
     };
   },
-  created(){
-    this.getReleaseVersion()
-    if(chcp){
-      chcp.getVersionInfo((err,data) => {
-        this.currentWebVersion = data.currentWebVersion
+  created() {
+    this.getReleaseVersion();
+    if (chcp) {
+      chcp.getVersionInfo((err, data) => {
+        this.currentWebVersion = data.currentWebVersion;
+        console.log("------------version-----------" + needUpdate);
       });
     }
   },
   mounted() {
-
-   document.addEventListener('chcp_nothingToUpdate',()=>{
-     this.$toasted.show(this.$t('NothingToInstall'))
-   }, false)
-   document.addEventListener('chcp_nothingToInstall',()=>{
-     this.$toasted.show(this.$t('NothingToInstall'))
-   }, false)
+    document.addEventListener(
+      "chcp_nothingToUpdate",
+      () => {
+        this.$toasted.show(this.$t("NothingToInstall"));
+      },
+      false
+    );
+    document.addEventListener(
+      "chcp_nothingToInstall",
+      () => {
+        this.$toasted.show(this.$t("NothingToInstall"));
+      },
+      false
+    );
   },
   methods: {
     back() {
       this.$router.back();
     },
-    getReleaseVersion(){
+    getReleaseVersion() {
       getPackageJson()
-        .then(response=>{
-          let data = response.data
-          this.latestVersion = data.version
-          this.needUpdate = semver.gt(data.version, APP_VERSION)
+        .then(response => {
+          let data = response.data;
+          this.latestVersion = data.version;
+          this.needUpdate = semver.gt(data.version, APP_VERSION);
         })
-        .catch(err=>{
-          console.error(err)
-        })
+        .catch(err => {
+          console.error(err);
+        });
     },
-    checkForUpdates(){
-      if(!chcp)return
-      if(this.working)return
-      this.working = true
-      chcp.fetchUpdate((err,data)=>{
-        if(err){
-          this.working = false
-          console.error(err.description)
-          this.$toasted.error(this.$t('FetchUpdateError'))
-          return
+    checkForUpdates() {
+      if (!chcp) return;
+      if (this.working) return;
+      this.working = true;
+      chcp.fetchUpdate((err, data) => {
+        if (err) {
+          this.working = false;
+          console.error(err.description);
+          this.$toasted.error(this.$t("FetchUpdateError"));
+          return;
         }
-        this.$toasted.show(this.$t('UpdateHint'))
-        chcp.installUpdate(error=>{
-          if(error){
-            console.error(error)
-            this.$toasted.error(this.$t('FetchUpdateError'))
-            return
+        this.$toasted.show(this.$t("UpdateHint"));
+        chcp.installUpdate(error => {
+          if (error) {
+            console.error(error);
+            this.$toasted.error(this.$t("FetchUpdateError"));
+            return;
           }
-          this.$toasted.show(this.$t('AfterUpdate'))
-        })//end of installUpdate
-        this.working = false
-      })
-
-
+          this.$toasted.show(this.$t("AfterUpdate"));
+        }); //end of installUpdate
+        this.working = false;
+      });
     },
 
     openDownloadURL() {
@@ -184,12 +182,12 @@ export default {
         }
       });
     },
-    toDebug(){
+    toDebug() {
       //window.location.href = 'http://192.168.2.253:3000'
-      window.open('127.0.0.1', "_self");
+      window.open("127.0.0.1", "_self");
     },
-    toScanLogin(){
-      this.$router.push({name: 'Login'})
+    toScanLogin() {
+      this.$router.push({ name: "Login" });
     }
   },
   components: {
@@ -201,12 +199,17 @@ export default {
 
 <style lang="stylus" scoped>
 @require '~@/stylus/color.styl';
-.field_btn
-  margin-top: 1rem
-  .btn_ok
-    padding: 0px 0px
-    margin: 0px 0px
-    width: 100%
+
+.field_btn {
+  margin-top: 1rem;
+
+  .btn_ok {
+    padding: 0px 0px;
+    margin: 0px 0px;
+    width: 100%;
+  }
+}
+
 .logo-wrapper {
   height: 120px;
   width: 100%;
@@ -243,7 +246,7 @@ export default {
 
   .label {
     flex: 1;
-    white-space: nowrap!important;
+    white-space: nowrap !important;
   }
 
   .value {
@@ -253,7 +256,7 @@ export default {
     height: 46px;
     line-height: 46px;
     vertical-align: middle;
-    padding-left: .5rem;
+    padding-left: 0.5rem;
     overflow: hidden;
   }
 }

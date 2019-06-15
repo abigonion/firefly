@@ -28,14 +28,14 @@ export class FFWAPI {
       this._baseCode = _base[0];
       this._baseIssuer = _base[1];
     }else{
-      this._baseCode = 'RBC';
+      this._baseCode = 'ORC';
     }
     if(counter.indexOf('_') >0){
       let _counter = counter.split('_');
       this._counterCode = _counter[0];
       this._counterIssuer = _counter[1];
     }else{
-      this._counterCode = 'RBC';
+      this._counterCode = 'ORC';
     }
   }
 
@@ -197,7 +197,7 @@ class tradeAggregationsParams {
   }
 
   private isNativeAsset(code:string,issuer:string|undefined): boolean{
-    if(code === 'RBC' && issuer === undefined){
+    if(code === 'ORC' && issuer === undefined){
       return true;
     }
     return false;

@@ -186,8 +186,8 @@ export default {
       let custom_ids = []
       this.tradepairs.custom.forEach((item,index) => {
           custom.push(Object.assign({}, item,{tradepairIndex: 'custom_'+index, custom: true,index}))
-          let idf = isNativeAsset(item.from) ? 'RBC' : item.from.code+'-'+item.from.issuer
-          let idt = isNativeAsset(item.to) ? 'RBC' : item.to.code +'-'+item.to.issuer
+          let idf = isNativeAsset(item.from) ? 'ORC' : item.from.code+'-'+item.from.issuer
+          let idt = isNativeAsset(item.to) ? 'ORC' : item.to.code +'-'+item.to.issuer
           custom_ids.push(idf+'_'+idt)
           custom_ids.push(idt+'_'+idf)
       })
@@ -204,8 +204,8 @@ export default {
         let copyarr = []
         for(let i=0,n=arr.length; i<n; i++){
           let item = arr[i]
-          let idf = isNativeAsset(item.from) ? 'RBC' : item.from.code+'-'+item.from.issuer
-          let idt = isNativeAsset(item.to) ? 'RBC' : item.to.code +'-'+item.to.issuer
+          let idf = isNativeAsset(item.from) ? 'ORC' : item.from.code+'-'+item.from.issuer
+          let idt = isNativeAsset(item.to) ? 'ORC' : item.to.code +'-'+item.to.issuer
           let isChoosed = false
           let ida = idf +'_'+idt
           let idb = idt +'_'+idf
@@ -323,8 +323,8 @@ export default {
       let ids = this.getSysPairIds()
       for(let i=0,n=custom.length;i<n;i++){
         let item = custom[i]
-        let idf = isNativeAsset(item.from) ? 'RBC' : item.from.code+'-'+item.from.issuer
-        let idt = isNativeAsset(item.to) ? 'RBC' : item.to.code +'-'+item.to.issuer
+        let idf = isNativeAsset(item.from) ? 'ORC' : item.from.code+'-'+item.from.issuer
+        let idt = isNativeAsset(item.to) ? 'ORC' : item.to.code +'-'+item.to.issuer
         if(ids.indexOf(idf+'_'+idt) >=0)continue;
         promises.push(this.saveTradePairStat({base: getAsset(custom[i].from), counter: getAsset(custom[i].to)}))
       }
@@ -344,8 +344,8 @@ export default {
         let arr = this.sysTradePairs[key]
         for(let i=0,n=arr.length;i<n;i++){
           let item = arr[i]
-          let idf = isNativeAsset(item.from) ? 'RBC' : item.from.code+'-'+item.from.issuer
-          let idt = isNativeAsset(item.to) ? 'RBC' : item.to.code +'-'+item.to.issuer
+          let idf = isNativeAsset(item.from) ? 'ORC' : item.from.code+'-'+item.from.issuer
+          let idt = isNativeAsset(item.to) ? 'ORC' : item.to.code +'-'+item.to.issuer
           let ida = idf +'_'+idt
           ids.push(ida)
         }
@@ -506,8 +506,8 @@ export default {
       },1000)
     },
     delPairFromCustom(pair){
-      let idf1 = isNativeAsset(pair.from) ? 'RBC' : pair.from.code+'-'+pair.from.issuer
-      let idt1 = isNativeAsset(pair.to) ? 'RBC' : pair.to.code +'-'+pair.to.issuer
+      let idf1 = isNativeAsset(pair.from) ? 'ORC' : pair.from.code+'-'+pair.from.issuer
+      let idt1 = isNativeAsset(pair.to) ? 'ORC' : pair.to.code +'-'+pair.to.issuer
       let key1 = idf1 + "_" + idt1;
       let key2 = idt1 + "_" + idf1;
       let index = -1
@@ -515,8 +515,8 @@ export default {
       let tradepair = null
       for(let i=0,n=data.length;i<n;i++){
         let item = data[i]
-        let idf2 = isNativeAsset(item.from) ? 'RBC' : item.from.code+'-'+item.from.issuer
-        let idt2 = isNativeAsset(item.to) ? 'RBC' : item.to.code +'-'+item.to.issuer
+        let idf2 = isNativeAsset(item.from) ? 'ORC' : item.from.code+'-'+item.from.issuer
+        let idt2 = isNativeAsset(item.to) ? 'ORC' : item.to.code +'-'+item.to.issuer
         let key = idf2 + '_' + idt2
         if(key === key1 || key === key2){
           index = i;

@@ -8,9 +8,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RB-ranbow/issues"
+    "url": "https://github.com/lhtech-rainbow/Rainbow/issues"
   },
-  "github": "https://github.com/RB-rainbow",
+  "github": "https://github.com/lhtech-rainbow/Rainbow",
   "homepage": "https://rainbow.link",
   "scripts": {
     "dev": "node build/dev-server.js",

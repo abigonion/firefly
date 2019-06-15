@@ -388,7 +388,7 @@ export default {
             if (payment.asset) {
               this.selectedasset = payment.asset
             } else {
-              this.selectedasset = {code: 'RBC'}
+              this.selectedasset = {code: 'ORC'}
             }
             //根据当前资产选择
             if(this.selectedasset.code){

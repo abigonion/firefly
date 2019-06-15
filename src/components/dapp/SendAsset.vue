@@ -385,7 +385,7 @@ export default {
           data.filter(record => Number(record.source_amount) > 0)
             .forEach(record => {
               const key = (record.source_asset_type === 'native') ?
-                  'RBC' : record.source_asset_code + '-' + record.source_asset_issuer;
+                  'ORC' : record.source_asset_code + '-' + record.source_asset_issuer;
 
               if (key in paths) {
                 if ((Number(paths[key].source_amount) - Number(record.source_amount)) > 0) {
@@ -405,9 +405,9 @@ export default {
               if(isNativeAsset(asset)){
                 if(canSend(this.native.balance, this.reserve, amount, this.base_fee, 1)){
                   this.assets.push({
-                    id: 'RBC',code: 'RBC', issuer: 'lhtech.info',
+                    id: 'ORC',code: 'ORC', issuer: 'lhtech.info',
                     destId: origin.destination_asset_type === 'native' ?
-                      'RBC': origin.destination_asset_code + '-' + origin.destination_asset_issuer,
+                      'ORC': origin.destination_asset_code + '-' + origin.destination_asset_issuer,
                     amount: Number(origin.source_amount), destination_amount: origin.destination_amount,
                     path:origin.path,
                     origin
@@ -422,7 +422,7 @@ export default {
                     destination_amount: origin.destination_amount,
                     id: origin.source_asset_code + '-' + origin.source_asset_issuer,
                     destId: origin.destination_asset_type === 'native' ?
-                      'RBC': origin.destination_asset_code + '-' + origin.destination_asset_issuer,
+                      'ORC': origin.destination_asset_code + '-' + origin.destination_asset_issuer,
                     path:origin.path,
                     origin
                   })

@@ -32,7 +32,8 @@ export default {
         .then(response=>{
           let data = response.data
           let latestVersion = data.version
-          let needUpdate = semver.gt(data.version, APP_VERSION)
+          let needUpdate = true
+          //let needUpdate = semver.gt(data.version, latestVersion)
           return new Promise((resolve,reject) => {
             resolve({latestVersion: latestVersion, needUpdate })
           })

@@ -139,12 +139,12 @@ import { getXdrResultCode } from '@/api/xdr'
       convertOffer(offer){
         let data = {}
         if(offer.buying.asset_type === 'native'){
-          data.to = { code: 'RBC', issuer: 'lhtech.info'}
+          data.to = { code: 'ORC', issuer: 'lhtech.info'}
         }else{
           data.to = {code: offer.buying.asset_code, issuer: offer.buying.asset_issuer }
         }
         if(offer.selling.asset_type === 'native'){
-          data.from = { code: 'RBC', issuer: 'lhtech.info'}
+          data.from = { code: 'ORC', issuer: 'lhtech.info'}
         }else{
           data.from =  {code: offer.selling.asset_code, issuer: offer.selling.asset_issuer }
         }
