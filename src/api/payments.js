@@ -7,6 +7,7 @@ var Promise = require('es6-promise').Promise
 // fetch payments
 // return page
 export function fetchPayments(address,order='desc',limit=200){
+  //TODO 判断返回是否有值，如果没有返回0 ， 如果有直接返回 
   return getServer().payments().forAccount(address).order(order).limit(limit).call();
 }
 

@@ -123,6 +123,7 @@ const mutations = {
     state.transactions = data
   },
   GET_PAYMENTS_SUCCESS(state,data){
+    console.log('---------------data--------------' + data)
     state.payments = data
   },
   GET_PAYMENT_STREAM(state,rows){

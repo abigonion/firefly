@@ -16,7 +16,7 @@ export const OFFICIAL_SITE = 'http://lhtech.info'
 // APP 最新版本信息
 export const CHECK_UPDATE = '#'
 //资产说明
-export const ASSET_INFO_BASE_URL = 'http://sudo38/docs/assets/'
+export const ASSET_INFO_BASE_URL = 'https://raw.githubusercontent.com/abigonion/firefly/RBC/docs/RBC.json'
 
 //default interval : 1分钟
 export const DEFAULT_INTERVAL = 60000
