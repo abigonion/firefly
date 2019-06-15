@@ -33,7 +33,7 @@
                 class="flex1 textcenter btntext"
                 @click="updateConfirmDlg = false"
               >{{$t('Button.Cancel')}}</div>
-              <v-btn round color="primary" class="flex1 primarybtn">立刻更新</v-btn>
+              <v-btn round color="primary" class="flex1 primarybtn" @click="doUpdate">立刻更新</v-btn>
 
             </div>
           </div>

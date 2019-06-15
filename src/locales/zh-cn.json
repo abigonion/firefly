@@ -47,7 +47,7 @@
   "Title.Scan": "扫描二维码",
   "Title.MyWallet":"我的钱包",
   "Title.Account":"账户信息",
-  "Title.MyAssets":"我的资产",
+  "Title.MyAssets":"我的资产old",
   "CopySuccess":"复制成功",
 
   "Error.ScannerPrepareFail": "扫描二维码配置失败",
