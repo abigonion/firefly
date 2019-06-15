@@ -8,7 +8,7 @@
         <router-view/>
       </v-content>
       <tab-bar v-if="tabBarShow"/>
-
+      <!-- 提示更新窗口 -->
       <v-dialog v-model="updateConfirmDlg" max-width="95%" persistent class="upDlg">
         <div>
           <div class="a-card-content">
@@ -24,11 +24,17 @@
             >{{$t('FindNewVersion',[latestVersion])}}</div>
             <div class="a-t1 textcenter font14">{{$t('UpdataTip')}}</div>
             <div class="a-btns flex-row" v-if="!updating">
-              <div class="flex1 btn-blue textcenter" @click="doUpdate">{{$t('Update')}}</div>
+              <!-- <div class="flex1 btn-blue textcenter" @click="doUpdate">{{$t('Update')}}</div>
               <div
                 class="flex1 textcenter"
                 @click="updateConfirmDlg = false"
+              >{{$t('Button.Cancel')}}</div> -->
+              <div
+                class="flex1 textcenter btntext"
+                @click="updateConfirmDlg = false"
               >{{$t('Button.Cancel')}}</div>
+              <v-btn round color="primary" class="flex1 primarybtn">立刻更新</v-btn>
+
             </div>
           </div>
         </div>
@@ -238,12 +244,6 @@ export default {
       //检查更新
       this.getReleaseVersion()
         .then(data => {
-          console.log(
-            "打印当前版本--------------" +
-              data.needUpdate +
-              "--------" +
-              data.latestVersion
-          );
           if (data.needUpdate) {
             this.updateConfirmDlg = true;
             this.latestVersion = data.latestVersion;
@@ -523,7 +523,11 @@ export default {
   border-top : solid 1px #999
   padding-top : 5px
 }
-.btn-blue {
-  color: $primarycolor.blue
+.primarybtn {
+  color: #fff2f2 !important
+}
+.btntext {
+  vertical-align: middle !important
+  line-height: 48px;
 }
 </style>

@@ -68,8 +68,7 @@
       </div>
     </div>
 
-    <scroll :refresh="refresh">
-
+   <scroll :refresh="refresh">
    <div class="content assets-xcontent">
       <card padding="0px 0px" margin="0px 0px" class="myassets_infocard_thirdassets full-width">
         <div class="assets full-width" slot="card-content">

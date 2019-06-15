@@ -16,6 +16,16 @@ import { setVuexStore } from './streams'
 import { AXIOS_DEFAULT_TIMEOUT } from './api/gateways'
 import axios from 'axios'
 require('./api/utils') 
+//导入Onsen UI框架
+// Webpack CSS import
+// import 'onsenui/css/onsenui.css';
+// import 'onsenui/css/onsen-css-components.css';
+
+// // JS import
+// import VueOnsen from 'vue-onsenui'; // This imports 'onsenui', so no need to import it separately
+
+// Vue.use(VueOnsen); // VueOnsen set here as plugin to VUE. Done automatically if a call to window.Vue exists in the startup code.
+
 
 // animate.css
 // import 'animate.css'

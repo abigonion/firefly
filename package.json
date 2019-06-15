@@ -1,6 +1,6 @@
 {
   "name": "rainbow",
-  "version": "1.0.0",
+  "version": "0.0.9",
   "description": "rainbow mobile wallet",
   "repository": {
     "type": "git",
@@ -68,6 +68,7 @@
     "net": "^1.0.2",
     "nprogress": ">=0.2.0",
     "number-precision": ">=1.2.0",
+    "onsenui": "^2.10.8",
     "raf.js": ">=0.0.4",
     "shvl": ">=1.2.0",
     "stellar-hd-wallet": ">=0.0.4",
@@ -79,6 +80,7 @@
     "vue-awesome-swiper": ">=2.6.7",
     "vue-i18n": ">=7.2.0",
     "vue-methods-promise": ">=0.2.2",
+    "vue-onsenui": "^2.6.2",
     "vue-pull-refresh": ">=0.2.6",
     "vue-qr": ">=1.2.3",
     "vue-router": ">=2.7.0",
