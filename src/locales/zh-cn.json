@@ -47,7 +47,7 @@
   "Title.Scan": "扫描二维码",
   "Title.MyWallet":"我的钱包",
   "Title.Account":"账户信息",
-  "Title.MyAssets":"我的资产old2",
+  "Title.MyAssets":"我的资产",
   "CopySuccess":"复制成功",
 
   "Error.ScannerPrepareFail": "扫描二维码配置失败",
@@ -452,7 +452,7 @@
   "DeterministicTransmission":"确定发送",
   "AddAll":"添加全部",
   "Pin":"pin",
-  "HorizonVersion":"equator版本",
+  "HorizonVersion":"horizon版本",
   "LoadMore":"载入更多",
   "Title.ThirdApp":"轻应用",
   "Error.AjaxTimeout":"连接服务器超时，请稍后再试",
@@ -528,7 +528,7 @@
   "createPassiveOffer":"创建延迟委单",
   "accountMerge":"合并账户",
   "send_to_exchange":"正在向{0}交易所转账，没有填写备注，您确认发送么？",
-  "update_2_native_hint":"亲爱的小主，本版钱包即将停止更新。彩虹团队已推出新版原生钱包：流畅、清爽、不卡顿。请立即下载：<b>https://wallet.fchain.io</b>"
+  "update_2_native_hint":"亲爱的小主，本版钱包即将停止更新。彩虹团队已推出新版原生钱包：流畅、清爽、不卡顿。请立即下载：<b>https://lhtech.info</b>"
 
 
 

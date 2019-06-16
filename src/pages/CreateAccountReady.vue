@@ -504,7 +504,7 @@ export default {
 .guide-header
   box-shadow 0 0 0 0
 .si-text
-  font-size: 14px
+  font-size: 15px
 .si-bg
   position: absolute
   top: 48px

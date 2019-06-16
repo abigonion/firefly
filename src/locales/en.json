@@ -535,7 +535,7 @@
   "createPassiveOffer":"create passive offer",
   "accountMerge":"merge account",
   "send_to_exchange":"sendint to exchange {0} with no memo, are you sure?",
-  "update_2_native_hint":"Hi, this version is about to stop updating. The Rainbow team has launched a new version of wallet, smooth and fast. Please visit <b>https://wallet.fchain.io</b> to download.",
+  "update_2_native_hint":"Hi, this version is about to stop updating. The Rainbow team has launched a new version of wallet, smooth and fast. Please visit <b>https://lhtech.info</b> to download.",
   "UpdataTip":"Make sure you have recorded a mnemonic or private key before updating."
 
 

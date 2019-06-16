@@ -309,29 +309,30 @@ export default {
   watch: {
     sort_flag(){
       this.selectedItem = null
-    },
-    balances(){
-      if(this.balances && this.balances.length>0 && this._getPriceFn){
-        this._getPriceFn()
-      }
     }
+    // balances(){
+    //   if(this.balances && this.balances.length>0 && this._getPriceFn){
+    //     this._getPriceFn()
+    //   }
+    // }
   },
   beforeMount () {
     this.price = this.priceState
   },
   mounted() {
-    this._getPriceFn = throttle(()=>{
-      //this.balances.filter(item=> Number(item.balance)>0
-      if(this.balances && this.balances.length > 0){
-        getAssetPrice(this.balances.map(item=> {
-          return {code: item.code, issuer:item.issuer }
-        }))
-        .then(response => {
-          this.price = response.data;
-          this.$store.commit(SET_PRICE_BY_API, response.data)
-        }).catch(err => {});
-      }
-     },60000)
+    //获取价格
+    // this._getPriceFn = throttle(()=>{
+    //   //this.balances.filter(item=> Number(item.balance)>0
+    //   if(this.balances && this.balances.length > 0){
+    //     getAssetPrice(this.balances.map(item=> {
+    //       return {code: item.code, issuer:item.issuer }
+    //     }))
+    //     .then(response => {
+    //       this.price = response.data;
+    //       this.$store.commit(SET_PRICE_BY_API, response.data)
+    //     }).catch(err => {});
+    //   }
+    //  },60000)
 
     this.$nextTick(() => {
 

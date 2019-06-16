@@ -167,7 +167,7 @@ export default {
 
   },
   mounted(){
-    this.url = 'sudo38.com'
+    this.url = 'equator.lhtech.info'
     this.search()
     this.url = ''
   },
