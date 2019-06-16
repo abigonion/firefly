@@ -40,10 +40,12 @@ export default {
         })
     },
     checkForUpdates(){
-      if(!chcp)return
+
+      if(!chcp) return
+      
       // this.$toasted.clear()
       // this.$toasted.show(this.$t('UpdateHint'),{duration: null})
-      chcp.fetchUpdate((err,data)=>{
+      chcp.fetchUpdate((err,data) =>{
         if(err){
           this.working = false
           console.error(err.description)

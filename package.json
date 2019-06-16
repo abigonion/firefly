@@ -1,6 +1,6 @@
 {
   "name": "rainbow",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "rainbow mobile wallet",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
     "url": "https://github.com/lhtech-rainbow/Rainbow/issues"
   },
   "github": "https://github.com/lhtech-rainbow/Rainbow",
-  "homepage": "https://rainbow.link",
+  "homepage": "https://lhtech.info",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",

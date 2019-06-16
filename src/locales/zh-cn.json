@@ -47,7 +47,7 @@
   "Title.Scan": "扫描二维码",
   "Title.MyWallet":"我的钱包",
   "Title.Account":"账户信息",
-  "Title.MyAssets":"我的资产old",
+  "Title.MyAssets":"我的资产old2",
   "CopySuccess":"复制成功",
 
   "Error.ScannerPrepareFail": "扫描二维码配置失败",
@@ -452,7 +452,7 @@
   "DeterministicTransmission":"确定发送",
   "AddAll":"添加全部",
   "Pin":"pin",
-  "HorizonVersion":"horizon版本",
+  "HorizonVersion":"equator版本",
   "LoadMore":"载入更多",
   "Title.ThirdApp":"轻应用",
   "Error.AjaxTimeout":"连接服务器超时，请稍后再试",
